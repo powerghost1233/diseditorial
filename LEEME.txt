@@ -1,0 +1,8 @@
+DAVID MILÁN ACADEMY — WEB EN UN SOLO INDEX
+
+Estructura:
+- index.html: contiene todo el HTML, CSS y JavaScript.
+- assets/: contiene únicamente portadas, logo y PDF de muestra.
+
+Para abrir la web, haz doble clic en index.html.
+Para publicarla, sube index.html y la carpeta assets manteniendo ambos al mismo nivel.
