@@ -1,69 +1,1387 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Biblioteca académica de David Milán: libros EBAU, PAU, Selectividad, Universidad y eBooks."><title>David Milán Academy | Biblioteca Académica</title><link rel="icon" href="assets/logo-david-milan.svg.png" type="image/png"><link rel="apple-touch-icon" href="assets/logo-david-milan.svg.png"><style>
-:root{--navy:#071a2d;--navy2:#0d2a49;--blue:#1467b3;--gold:#d4af37;--gold2:#f0c75e;--paper:#f5f7fb;--card:#fff;--ink:#172033;--muted:#667085;--line:#dfe6ef;--shadow:0 22px 60px rgba(7,26,45,.14)}
-[data-theme="dark"]{--paper:#06111d;--card:#0d1b2a;--ink:#edf4ff;--muted:#a8b7c8;--line:#1e3348;--shadow:0 22px 60px rgba(0,0,0,.32)}
-*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.65}a{text-decoration:none;color:inherit}button,input{font:inherit}.container{width:min(1220px,92%);margin:auto}
-.topbar{background:#04121f;color:#b8c8d9;font-size:.86rem}.topbar .container{display:flex;justify-content:space-between;padding:.55rem 0;gap:1rem;flex-wrap:wrap}.header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--card) 92%,transparent);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:1.5rem}.brand{display:flex;align-items:center;gap:.85rem;font-weight:900;color:var(--navy)}[data-theme="dark"] .brand{color:white}.brand img{width:155px;height:auto;max-height:62px;object-fit:contain;display:block}.brand small{display:block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}.links{display:flex;align-items:center;gap:1.15rem;font-weight:750}.links a:hover{color:var(--blue)}.icon-btn{border:1px solid var(--line);background:var(--card);color:var(--ink);width:42px;height:42px;border-radius:12px;cursor:pointer}.menu{display:none}
-.hero{background:radial-gradient(circle at 82% 10%,rgba(37,144,230,.34),transparent 34%),linear-gradient(135deg,#061629,#0a2b4a 64%,#124c7e);color:white;padding:84px 0 100px;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:60px}.eyebrow{color:var(--gold2);font-weight:900;text-transform:uppercase;letter-spacing:.14em;font-size:.82rem}.hero h1{font-size:clamp(3rem,6vw,6.3rem);line-height:.98;letter-spacing:-.055em;margin:1rem 0 1.35rem}.hero h1 span{color:var(--gold2)}.hero p{max-width:700px;color:#d9e6f2;font-size:1.16rem}.actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.7rem}.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.88rem 1.15rem;border-radius:12px;font-weight:850;border:1px solid transparent;cursor:pointer;transition:.2s}.btn:hover{transform:translateY(-2px)}.primary{background:var(--gold);color:var(--navy)}.secondary{background:transparent;border-color:rgba(255,255,255,.28);color:white}.dark{background:var(--navy);color:white}.outline{background:var(--card);border-color:var(--line);color:var(--ink)}.hero-books{position:relative;min-height:520px}.hero-books img{position:absolute;width:250px;border-radius:6px;box-shadow:0 30px 55px rgba(0,0,0,.35);transition:.3s}.hero-books img:nth-child(1){left:6%;top:16%;transform:rotate(-8deg)}.hero-books img:nth-child(2){left:34%;top:2%;z-index:3}.hero-books img:nth-child(3){right:0;top:18%;transform:rotate(8deg)}
-.metrics{margin-top:-34px;position:relative;z-index:3}.metric-grid{display:grid;grid-template-columns:repeat(4,1fr);background:var(--card);box-shadow:var(--shadow);border-radius:18px;padding:1rem}.metric{text-align:center;padding:1rem;border-right:1px solid var(--line)}.metric:last-child{border:0}.metric strong{display:block;color:var(--blue);font-size:1.65rem}.metric span{color:var(--muted);font-size:.9rem}
-section{padding:88px 0}.section-head{text-align:center;max-width:800px;margin:0 auto 36px}.tag{color:var(--blue);font-weight:900;letter-spacing:.13em;text-transform:uppercase;font-size:.78rem}.section-head h2{font-size:clamp(2.1rem,4vw,3.5rem);line-height:1.1;color:var(--ink);margin:.55rem 0 .8rem}.section-head p{color:var(--muted)}.toolbar{display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:center;margin-bottom:28px}.search{position:relative}.search input{width:100%;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem 1rem 1rem 2.8rem;color:var(--ink)}.search span{position:absolute;left:1rem;top:.95rem}.tabs{display:flex;gap:.55rem;flex-wrap:wrap}.tab{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:.72rem 1rem;font-weight:850;cursor:pointer}.tab.active,.tab:hover{background:var(--navy);color:white;border-color:var(--navy)}
-.catalog{display:grid;grid-template-columns:repeat(3,1fr);gap:27px}.card{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 12px 30px rgba(7,26,45,.08);display:flex;flex-direction:column;transition:.25s}.card:hover{transform:translateY(-8px);box-shadow:var(--shadow)}.cover{height:410px;background:linear-gradient(145deg,#edf4fb,#fff);display:grid;place-items:center;padding:24px;position:relative}.cover img{height:100%;max-width:100%;object-fit:contain;filter:drop-shadow(0 18px 22px rgba(7,26,45,.25))}.badge{position:absolute;left:15px;top:15px;background:var(--gold);color:var(--navy);font-weight:900;border-radius:8px;padding:.35rem .65rem;font-size:.72rem}.body{padding:1.35rem;display:flex;flex-direction:column;flex:1}.body h3{font-size:1.3rem;line-height:1.28}.meta{color:var(--blue);font-weight:850;font-size:.82rem;margin:.45rem 0 .75rem}.body p{color:var(--muted);font-size:.94rem}.card-actions{display:flex;gap:.6rem;margin-top:auto;padding-top:1.1rem}.card-actions .btn{flex:1;padding:.72rem .6rem;font-size:.86rem}
-.feature{background:color-mix(in srgb,var(--blue) 7%,var(--paper))}.feature-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:58px;align-items:center}.feature-cover{text-align:center}.feature-cover img{max-height:650px;max-width:100%;filter:drop-shadow(0 28px 35px rgba(7,26,45,.22))}.feature-copy h2{font-size:clamp(2.2rem,4vw,3.5rem);line-height:1.08}.feature-copy p{color:var(--muted);margin-top:1rem}.checklist{display:grid;grid-template-columns:1fr 1fr;gap:.7rem 1rem;margin:1.4rem 0}.check{font-weight:750}.check:before{content:'✓';color:var(--gold);margin-right:.5rem}
-.author-card{display:grid;grid-template-columns:auto 1fr;gap:28px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:32px;box-shadow:var(--shadow);align-items:center}.author-card img{width:120px}.author-card p{color:var(--muted)}.cta{background:linear-gradient(135deg,var(--navy),#123f6d);color:white;text-align:center}.cta p{color:#d6e3ef;max-width:720px;margin:1rem auto}
-footer{background:#04121f;color:#aebed0;padding:55px 0 22px}.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px}.footer-grid h4{color:white;margin-bottom:.7rem}.footer-grid a{display:block;margin:.35rem 0}.copy{border-top:1px solid #1a3045;margin-top:35px;padding-top:18px;text-align:center;font-size:.84rem}
-.modal{position:fixed;inset:0;background:rgba(2,10,18,.78);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem}.modal.open{display:flex}.modal-card{width:min(1100px,96vw);max-height:92vh;background:var(--card);color:var(--ink);border-radius:18px;overflow:hidden;box-shadow:0 30px 85px rgba(0,0,0,.45);display:flex;flex-direction:column}.modal-head{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;background:var(--navy);color:white}.modal-body{padding:24px;overflow:auto}.detail-grid{display:grid;grid-template-columns:280px 1fr;gap:28px}.detail-grid img{width:100%;border-radius:8px}.detail-grid p{margin:.8rem 0;color:var(--muted);white-space:pre-line}.modal iframe{width:100%;height:78vh;border:0;background:white}.close{border:0;background:rgba(255,255,255,.12);color:white;border-radius:10px;width:38px;height:38px;cursor:pointer}
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>David Milán Academy | Editorial académica: EBAU, universidad e ingeniería</title>
+<meta name="description" content="Editorial académica independiente. Manuales de EBAU/PAU, libros universitarios de ingeniería y eBooks con teoría clara, ejercicios resueltos paso a paso y muestras gratuitas.">
+<meta name="author" content="David Milán">
+<meta name="theme-color" content="#071a2d">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://davidmilanacademy.com/">
+<link rel="icon" href="assets/logo-david-milan.svg" type="image/svg+xml">
+<link rel="alternate icon" href="assets/logo-david-milan.svg.png">
+<link rel="apple-touch-icon" href="assets/favicon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="David Milán Academy">
+<meta property="og:title" content="David Milán Academy | Editorial académica">
+<meta property="og:description" content="Manuales de EBAU/PAU, libros universitarios y eBooks. Teoría clara y ejercicios resueltos paso a paso.">
+<meta property="og:image" content="assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="image" href="assets/universidad-teoria-circuitos.webp">
+
+<style>
+/* ============================================================
+   DAVID MILÁN ACADEMY — hoja de estilos única
+   1. Tokens y base      5. Catálogo
+   2. Cabecera           6. Secciones de contenido
+   3. Hero               7. Modales
+   4. Componentes        8. Responsive
+   ============================================================ */
+
+/* ---------- 1. TOKENS ---------- */
+:root{
+  --navy:#071a2d; --navy-2:#0d2a49; --navy-3:#123f6d;
+  --blue:#1467b3; --blue-soft:#e8f1fb;
+  --gold:#d4af37; --gold-2:#f0c75e; --gold-soft:#fbf3dc;
+  --paper:#f6f8fc; --card:#ffffff; --card-2:#fbfcfe;
+  --ink:#101a2b; --ink-2:#33415a; --muted:#68758c; --line:#e0e7f0;
+  --cover-bg:linear-gradient(150deg,#eef4fb,#ffffff);
+  --shadow-s:0 4px 14px rgba(7,26,45,.06);
+  --shadow-m:0 14px 34px rgba(7,26,45,.10);
+  --shadow-l:0 28px 70px rgba(7,26,45,.16);
+  --r-s:10px; --r-m:16px; --r-l:24px;
+  --serif:Georgia,"Iowan Old Style","Times New Roman",Times,serif;
+  --sans:"Inter","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --maxw:1240px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+[data-theme="dark"]{
+  --navy:#04101c; --navy-2:#0a1f36; --navy-3:#12395f;
+  --blue:#4b9ae8; --blue-soft:#10243a;
+  --gold-soft:#241f10;
+  --paper:#050e18; --card:#0c1a29; --card-2:#0f2032;
+  --line:#1c3349;
+  --cover-bg:linear-gradient(150deg,#12253a,#0c1a29);
+  --shadow-s:0 4px 14px rgba(0,0,0,.30);
+  --shadow-m:0 14px 34px rgba(0,0,0,.40);
+  --shadow-l:0 28px 70px rgba(0,0,0,.55);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:96px;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--sans);background:var(--paper);color:var(--ink);
+  line-height:1.68;font-size:16.5px;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+body.locked{overflow:hidden}
+h1,h2,h3,h4,.serif{font-family:var(--serif);font-weight:700;line-height:1.14;letter-spacing:-.015em}
+a{color:inherit;text-decoration:none}
+button,input,textarea,select{font:inherit;color:inherit}
+img,svg{max-width:100%;display:block}
+ul{list-style:none}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+.container{width:min(var(--maxw),92%);margin-inline:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:fixed;left:-9999px;z-index:300}
+.skip:focus{left:16px;top:16px;background:var(--gold);color:var(--navy);padding:.7rem 1.1rem;border-radius:var(--r-s);font-weight:800}
+
+/* ---------- 2. COMPONENTES BASE ---------- */
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.76rem;font-weight:800;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--blue)}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--gold)}
+.eyebrow.on-dark{color:var(--gold-2)}
+.section-head{max-width:760px;margin:0 auto 44px;text-align:center}
+.section-head h2{font-size:clamp(1.9rem,3.6vw,3rem);margin:.8rem 0 .9rem}
+.section-head p{color:var(--muted);font-size:1.05rem}
+.section-head .eyebrow::before{display:none}
+section{padding:96px 0}
+.rule{height:1px;background:var(--line);border:0}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+  padding:.9rem 1.35rem;border-radius:var(--r-s);font-weight:800;font-size:.95rem;
+  border:1.5px solid transparent;cursor:pointer;white-space:nowrap;
+  transition:transform .22s var(--ease),box-shadow .22s var(--ease),background .2s,color .2s,border-color .2s;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0)}
+.btn[disabled]{opacity:.5;cursor:not-allowed;transform:none!important}
+.btn-gold{background:linear-gradient(135deg,var(--gold-2),var(--gold));color:#2a1f00;box-shadow:0 8px 22px rgba(212,175,55,.32)}
+.btn-gold:hover{box-shadow:0 14px 30px rgba(212,175,55,.42)}
+.btn-navy{background:var(--navy);color:#fff}
+[data-theme="dark"] .btn-navy{background:var(--blue);color:#04101c}
+.btn-ghost{background:transparent;border-color:rgba(255,255,255,.3);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+.btn-outline{background:var(--card);border-color:var(--line);color:var(--ink)}
+.btn-outline:hover{border-color:var(--blue);color:var(--blue)}
+.btn-sm{padding:.62rem .9rem;font-size:.85rem}
+.icon-btn{width:44px;height:44px;display:grid;place-items:center;border:1.5px solid var(--line);
+  background:var(--card);border-radius:var(--r-s);cursor:pointer;font-size:1.05rem;transition:.2s}
+.icon-btn:hover{border-color:var(--blue);color:var(--blue)}
+
+.pill{display:inline-flex;align-items:center;gap:.4rem;padding:.3rem .7rem;border-radius:999px;
+  font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.pill-gold{background:var(--gold);color:#2a1f00}
+.pill-blue{background:var(--blue-soft);color:var(--blue)}
+.pill-line{border:1px solid var(--line);color:var(--muted)}
+
+/* Animación de aparición al hacer scroll */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- 3. CABECERA ---------- */
+.topbar{background:#03101c;color:#9fb3c8;font-size:.82rem}
+.topbar .container{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.6rem 0;flex-wrap:wrap}
+.topbar a:hover{color:var(--gold-2)}
+.topbar .dot{color:var(--gold)}
+
+.header{position:sticky;top:0;z-index:60;background:color-mix(in srgb,var(--card) 88%,transparent);
+  backdrop-filter:blur(18px);border-bottom:1px solid var(--line);transition:box-shadow .3s}
+.header.scrolled{box-shadow:var(--shadow-m)}
+.nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
+.brand{display:flex;align-items:center;gap:.8rem;flex:none}
+.brand .mark{width:46px;height:46px}
+.brand .word{font-family:var(--serif);font-weight:700;font-size:1.18rem;letter-spacing:.01em;color:var(--ink);line-height:1.1}
+.brand .word small{display:block;font-family:var(--sans);font-size:.6rem;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+.nav-links{display:flex;align-items:center;gap:1.6rem;font-weight:650;font-size:.95rem}
+.nav-links a{position:relative;padding:.3rem 0}
+.nav-links a::after{content:"";position:absolute;left:0;right:100%;bottom:-2px;height:2px;
+  background:var(--gold);transition:right .3s var(--ease)}
+.nav-links a:hover::after{right:0}
+.nav-tools{display:flex;align-items:center;gap:.5rem;flex:none}
+.burger{display:none}
+
+/* ---------- 4. HERO ---------- */
+.hero{
+  position:relative;color:#fff;padding:96px 0 118px;overflow:hidden;
+  background:
+    radial-gradient(1100px 520px at 78% 8%,rgba(37,144,230,.30),transparent 60%),
+    radial-gradient(700px 420px at 8% 92%,rgba(212,175,55,.14),transparent 60%),
+    linear-gradient(140deg,#04121f 0%,#0a2b4a 58%,#12466f 100%);
+}
+.hero::after{ /* trama sutil tipo papel */
+  content:"";position:absolute;inset:0;opacity:.25;pointer-events:none;
+  background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px);
+  background-size:100% 46px;
+}
+.hero .container{position:relative;z-index:2}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+.hero h1{font-size:clamp(2.5rem,5.4vw,4.6rem);margin:1.1rem 0 1.2rem;letter-spacing:-.03em}
+.hero h1 em{font-style:normal;color:var(--gold-2)}
+.hero p.lead{color:#cfe0f0;font-size:1.14rem;max-width:600px}
+.hero-actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:2rem}
+.hero-note{display:flex;align-items:center;gap:.6rem;margin-top:1.6rem;color:#9db8d0;font-size:.88rem}
+
+/* Estantería 3D */
+.shelf{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:end;perspective:1600px}
+.book{
+  position:relative;transform-style:preserve-3d;cursor:pointer;border:0;background:none;padding:0;
+  transition:transform .55s var(--ease);
+}
+.book img{width:100%;aspect-ratio:2/3;object-fit:cover;border-radius:3px 6px 6px 3px;
+  box-shadow:0 26px 46px rgba(0,0,0,.5), 0 2px 0 rgba(255,255,255,.15) inset;
+  background:#fff;backface-visibility:hidden}
+.book::before{ /* lomo */
+  content:"";position:absolute;left:0;top:0;bottom:0;width:11px;border-radius:3px 0 0 3px;
+  background:linear-gradient(90deg,rgba(0,0,0,.55),rgba(255,255,255,.16) 45%,rgba(0,0,0,.35));
+  transform:translateZ(1px);
+}
+.book::after{ /* reflejo */
+  content:"";position:absolute;inset:0;border-radius:4px;pointer-events:none;
+  background:linear-gradient(105deg,rgba(255,255,255,.34) 0%,rgba(255,255,255,0) 34%);
+  opacity:0;transition:opacity .5s}
+.book:nth-child(1){transform:rotateY(16deg) rotateX(3deg) translateZ(-30px)}
+.book:nth-child(2){transform:translateY(-34px) rotateY(-4deg) translateZ(30px);z-index:3}
+.book:nth-child(3){transform:rotateY(-16deg) rotateX(3deg) translateZ(-30px)}
+.book:hover,.book:focus-visible{transform:translateY(-16px) rotateY(0) rotateX(0) scale(1.05);z-index:5}
+.book:hover::after,.book:focus-visible::after{opacity:1}
+.book .spine-label{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);
+  background:rgba(4,16,28,.82);color:#fff;font-size:.68rem;font-weight:700;padding:.25rem .6rem;
+  border-radius:999px;opacity:0;transition:opacity .3s;white-space:nowrap}
+.book:hover .spine-label{opacity:1}
+
+/* Barra de cifras */
+.stats{position:relative;z-index:5;margin-top:-46px}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);background:var(--card);
+  border:1px solid var(--line);border-radius:var(--r-l);box-shadow:var(--shadow-l);overflow:hidden}
+.stat{padding:1.6rem 1rem;text-align:center;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-family:var(--serif);font-size:2.1rem;color:var(--blue);line-height:1}
+.stat span{display:block;color:var(--muted);font-size:.86rem;margin-top:.35rem}
+
+/* Cinta de colecciones */
+.strip{background:var(--navy);color:#b9cbdd;padding:14px 0;overflow:hidden;white-space:nowrap}
+.strip .track{display:inline-flex;gap:3rem;animation:slide 34s linear infinite;font-size:.84rem;
+  letter-spacing:.22em;text-transform:uppercase;font-weight:700}
+.strip span i{color:var(--gold);font-style:normal;margin-right:.6rem}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- 5. CATÁLOGO ---------- */
+.toolbar{display:grid;grid-template-columns:1fr auto auto;gap:.9rem;align-items:center;margin-bottom:20px}
+.field{position:relative}
+.field input,.field select{width:100%;background:var(--card);border:1.5px solid var(--line);
+  border-radius:var(--r-s);padding:.95rem 1rem;transition:.2s}
+.field input{padding-left:2.9rem}
+.field input:focus,.field select:focus{border-color:var(--blue);outline:none;box-shadow:0 0 0 4px color-mix(in srgb,var(--blue) 14%,transparent)}
+.field .ico{position:absolute;left:1rem;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none}
+.filters{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:12px}
+.chip{border:1.5px solid var(--line);background:var(--card);border-radius:999px;padding:.6rem 1.05rem;
+  font-weight:750;font-size:.9rem;cursor:pointer;transition:.2s}
+.chip:hover{border-color:var(--blue);color:var(--blue)}
+.chip[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+[data-theme="dark"] .chip[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:#04101c}
+.result-count{color:var(--muted);font-size:.88rem;margin-bottom:26px}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.bookcard{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r-l);overflow:hidden;
+  display:flex;flex-direction:column;box-shadow:var(--shadow-s);
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .3s;
+  transform-style:preserve-3d;will-change:transform;
+}
+.bookcard:hover{box-shadow:var(--shadow-l);border-color:color-mix(in srgb,var(--blue) 35%,var(--line))}
+.bookcard .cover{position:relative;aspect-ratio:2/3;background:var(--cover-bg);padding:20px;overflow:hidden}
+.bookcard .cover img{width:100%;height:100%;object-fit:cover;border-radius:4px 8px 8px 4px;
+  box-shadow:0 18px 30px rgba(7,26,45,.26);transition:transform .5s var(--ease)}
+.bookcard:hover .cover img{transform:scale(1.035) rotate(-.6deg)}
+.bookcard .cover::after{content:"";position:absolute;inset:20px;border-radius:4px 8px 8px 4px;pointer-events:none;
+  background:linear-gradient(110deg,rgba(255,255,255,.4),transparent 42%);opacity:0;transition:opacity .5s}
+.bookcard:hover .cover::after{opacity:1}
+.bookcard .badge{position:absolute;left:30px;top:30px;z-index:2}
+.bookcard .quick{position:absolute;right:30px;bottom:30px;z-index:2;opacity:0;transform:translateY(8px);
+  transition:.3s var(--ease)}
+.bookcard:hover .quick{opacity:1;transform:none}
+.bookcard .body{padding:1.4rem;display:flex;flex-direction:column;flex:1}
+.bookcard h3{font-size:1.16rem;line-height:1.25}
+.bookcard .meta{color:var(--blue);font-weight:800;font-size:.8rem;margin:.5rem 0 .6rem;letter-spacing:.02em}
+.bookcard p{color:var(--muted);font-size:.92rem;flex:1}
+.specs{display:flex;gap:.9rem;flex-wrap:wrap;color:var(--muted);font-size:.78rem;margin-top:.9rem;
+  padding-top:.9rem;border-top:1px dashed var(--line)}
+.specs b{color:var(--ink-2);font-weight:700}
+.bookcard .actions{display:flex;gap:.55rem;margin-top:1.1rem}
+.bookcard .actions .btn{flex:1;padding:.7rem .5rem;font-size:.85rem}
+.empty{grid-column:1/-1;text-align:center;padding:56px 20px;border:1.5px dashed var(--line);
+  border-radius:var(--r-l);color:var(--muted)}
+
+/* ---------- 6. SECCIONES ---------- */
+.featured{background:linear-gradient(180deg,transparent,var(--blue-soft) 40%,transparent)}
+.featured-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:center}
+.featured-cover{display:grid;place-items:center;padding:38px;background:var(--cover-bg);
+  border:1px solid var(--line);border-radius:var(--r-l);box-shadow:var(--shadow-m);perspective:1400px}
+.featured-cover img{width:min(100%,400px);aspect-ratio:2/3;object-fit:cover;border-radius:4px 10px 10px 4px;
+  box-shadow:0 30px 50px rgba(7,26,45,.3);transform:rotateY(-12deg) rotateX(4deg);
+  transition:transform .6s var(--ease)}
+.featured-cover:hover img{transform:rotateY(0) rotateX(0) scale(1.02)}
+.featured h2{font-size:clamp(1.9rem,3.6vw,3rem);margin:.9rem 0 1rem}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:.65rem 1.2rem;margin:1.6rem 0}
+.checks li{display:flex;gap:.6rem;align-items:flex-start;font-weight:650;font-size:.95rem}
+.checks li::before{content:"✓";color:var(--gold);font-weight:900;flex:none}
+
+.cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:var(--r-l);padding:2rem;
+  box-shadow:var(--shadow-s);transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.tile:hover{transform:translateY(-6px);box-shadow:var(--shadow-m)}
+.tile .glyph{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;font-size:1.4rem;
+  background:var(--gold-soft);color:var(--gold);margin-bottom:1.1rem}
+.tile h3{font-size:1.25rem;margin-bottom:.6rem}
+.tile p{color:var(--muted);font-size:.95rem}
+
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:s}
+.step{position:relative;padding:2rem 1.4rem;background:var(--card);border:1px solid var(--line);border-radius:var(--r-m)}
+.step::before{counter-increment:s;content:"0" counter(s);font-family:var(--serif);font-size:2.2rem;
+  color:color-mix(in srgb,var(--gold) 55%,transparent);display:block;margin-bottom:.5rem}
+.step h4{font-size:1.05rem;margin-bottom:.4rem}
+.step p{color:var(--muted);font-size:.9rem}
+
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.quote{background:var(--card);border:1px solid var(--line);border-radius:var(--r-l);padding:2rem;position:relative}
+.quote::before{content:"“";position:absolute;top:.2rem;right:1.4rem;font-family:var(--serif);
+  font-size:5rem;color:color-mix(in srgb,var(--gold) 30%,transparent);line-height:1}
+.quote p{color:var(--ink-2);font-size:.98rem}
+.quote .who{display:flex;align-items:center;gap:.8rem;margin-top:1.3rem;padding-top:1.1rem;border-top:1px solid var(--line)}
+.quote .av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-weight:800;
+  background:var(--navy);color:var(--gold-2);flex:none}
+.quote .who b{display:block;font-size:.92rem}
+.quote .who span{color:var(--muted);font-size:.82rem}
+
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.post{background:var(--card);border:1px solid var(--line);border-radius:var(--r-l);overflow:hidden;
+  cursor:pointer;text-align:left;padding:0;transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.post:hover{transform:translateY(-6px);box-shadow:var(--shadow-m)}
+.post .head{height:132px;background:linear-gradient(135deg,var(--navy-2),var(--navy-3));
+  display:grid;place-items:center;color:var(--gold-2);font-family:var(--serif);font-size:2.4rem}
+.post .body{padding:1.5rem}
+.post h3{font-size:1.1rem;margin:.6rem 0 .5rem;line-height:1.3}
+.post p{color:var(--muted);font-size:.9rem}
+.post .date{color:var(--muted);font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+
+.faq{max-width:840px;margin-inline:auto}
+.qa{border:1px solid var(--line);border-radius:var(--r-m);background:var(--card);margin-bottom:.8rem;overflow:hidden}
+.qa button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:1rem;
+  padding:1.2rem 1.4rem;background:none;border:0;cursor:pointer;text-align:left;font-weight:750;font-size:1rem}
+.qa button .plus{flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;
+  background:var(--gold-soft);color:var(--gold);font-weight:900;transition:transform .3s}
+.qa[open] button .plus{transform:rotate(45deg)}
+.qa .answer{max-height:0;overflow:hidden;transition:max-height .4s var(--ease)}
+.qa .answer p{padding:0 1.4rem 1.3rem;color:var(--muted);font-size:.95rem}
+
+.band{background:linear-gradient(135deg,var(--navy),var(--navy-3));color:#fff;text-align:center}
+.band h2{font-size:clamp(1.8rem,3.4vw,2.7rem)}
+.band p{color:#cfe0f0;max-width:660px;margin:1rem auto 1.8rem}
+.newsletter{display:flex;gap:.6rem;max-width:520px;margin-inline:auto;flex-wrap:wrap}
+.newsletter input{flex:1;min-width:220px;background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.25);
+  border-radius:var(--r-s);padding:.9rem 1rem;color:#fff}
+.newsletter input::placeholder{color:#9db8d0}
+.newsletter input:focus{outline:none;border-color:var(--gold)}
+.privacy{color:#8ba7c1;font-size:.78rem;margin-top:.9rem}
+
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:52px;align-items:start}
+.contact-list li{display:flex;gap:.9rem;padding:1rem 0;border-bottom:1px solid var(--line)}
+.contact-list .glyph{width:40px;height:40px;border-radius:12px;background:var(--blue-soft);color:var(--blue);
+  display:grid;place-items:center;flex:none}
+.contact-list b{display:block;font-size:.95rem}
+.contact-list span{color:var(--muted);font-size:.9rem}
+.form{background:var(--card);border:1px solid var(--line);border-radius:var(--r-l);padding:2rem;box-shadow:var(--shadow-s)}
+.form .row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form label{display:block;font-size:.85rem;font-weight:750;margin:0 0 .35rem}
+.form input,.form textarea,.form select{width:100%;background:var(--card-2);border:1.5px solid var(--line);
+  border-radius:var(--r-s);padding:.85rem 1rem;margin-bottom:1rem}
+.form input:focus,.form textarea:focus,.form select:focus{outline:none;border-color:var(--blue)}
+.form textarea{min-height:130px;resize:vertical}
+.err{color:#c0392b;font-size:.8rem;margin:-.7rem 0 .9rem;display:none}
+.err.show{display:block}
+
+footer{background:#03101c;color:#a5b8cb;padding:64px 0 24px}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px}
+.foot-grid h4{color:#fff;font-size:1rem;margin-bottom:1rem}
+.foot-grid a{display:block;padding:.28rem 0;font-size:.92rem}
+.foot-grid a:hover{color:var(--gold-2)}
+.foot-brand .word{color:#fff}
+.foot-brand .word small{color:#7f95ab}
+.legal{border-top:1px solid #12293f;margin-top:44px;padding-top:22px;display:flex;
+  justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.82rem}
+
+.totop{position:fixed;right:20px;bottom:20px;z-index:70;width:48px;height:48px;border-radius:50%;
+  background:var(--navy);color:#fff;border:0;cursor:pointer;box-shadow:var(--shadow-m);
+  opacity:0;pointer-events:none;transition:.3s}
+.totop.show{opacity:1;pointer-events:auto}
+.totop:hover{background:var(--blue)}
+
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,140%);z-index:200;
+  background:var(--navy);color:#fff;padding:.9rem 1.4rem;border-radius:var(--r-s);
+  box-shadow:var(--shadow-l);font-size:.92rem;transition:transform .45s var(--ease)}
+.toast.show{transform:translate(-50%,0)}
+
+/* ---------- 7. MODALES ---------- */
+.modal{position:fixed;inset:0;z-index:150;display:none;align-items:center;justify-content:center;padding:1.2rem;
+  background:rgba(3,12,22,.76);backdrop-filter:blur(4px)}
+.modal.open{display:flex;animation:fade .25s var(--ease)}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.sheet{width:min(1080px,100%);max-height:92vh;background:var(--card);border-radius:var(--r-l);
+  box-shadow:var(--shadow-l);display:flex;flex-direction:column;overflow:hidden;
+  animation:pop .35s var(--ease)}
+@keyframes pop{from{transform:translateY(24px) scale(.98);opacity:0}to{transform:none;opacity:1}}
+.sheet-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:1rem 1.4rem;background:var(--navy);color:#fff}
+.sheet-head strong{font-family:var(--serif);font-size:1.05rem;font-weight:700}
+.sheet-body{padding:1.8rem;overflow:auto}
+.close{width:38px;height:38px;border:0;border-radius:10px;background:rgba(255,255,255,.14);
+  color:#fff;cursor:pointer;flex:none}
+.close:hover{background:rgba(255,255,255,.28)}
+
+.detail{display:grid;grid-template-columns:minmax(200px,280px) 1fr;gap:34px;align-items:start}
+.detail-cover img{width:100%;aspect-ratio:2/3;object-fit:cover;border-radius:4px 8px 8px 4px;box-shadow:var(--shadow-m)}
+.detail-cover .btn{width:100%;margin-top:.7rem}
+.detail h2{font-size:1.7rem;margin:.6rem 0 .3rem}
+.detail .sub{color:var(--blue);font-weight:700;font-size:1rem;margin-bottom:1rem}
+.tabs{display:flex;gap:.3rem;border-bottom:1.5px solid var(--line);margin:1.4rem 0 1.2rem;flex-wrap:wrap}
+.tabs button{background:none;border:0;padding:.75rem 1rem;font-weight:750;cursor:pointer;color:var(--muted);
+  border-bottom:2.5px solid transparent;margin-bottom:-1.5px}
+.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--gold)}
+.panel p{color:var(--muted);margin-bottom:.9rem}
+.datasheet{width:100%;border-collapse:collapse;font-size:.92rem}
+.datasheet th,.datasheet td{padding:.7rem .2rem;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.datasheet th{color:var(--muted);font-weight:650;width:42%}
+.toc{counter-reset:c}
+.toc li{padding:.6rem 0;border-bottom:1px dashed var(--line);display:flex;gap:.9rem;font-size:.94rem}
+.toc li b{color:var(--gold);font-family:var(--serif);flex:none}
+.toc li span{color:var(--muted);font-size:.86rem;display:block}
+.modal iframe{width:100%;flex:1;min-height:68vh;border:0;background:#fff}
+.pdf-foot{padding:.8rem 1.4rem;border-top:1px solid var(--line);font-size:.86rem;color:var(--muted);
+  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.article h2{font-size:1.5rem;margin:1.6rem 0 .6rem}
+.article p{color:var(--ink-2);margin-bottom:1rem}
+.article ul{margin:0 0 1rem 1.1rem;list-style:disc;color:var(--ink-2)}
+.article li{margin-bottom:.4rem}
 .hidden{display:none!important}
-@media(max-width:960px){.hero-grid,.feature-grid{grid-template-columns:1fr}.hero{text-align:center}.hero p{margin:auto}.actions{justify-content:center}.hero-books{min-height:440px}.catalog{grid-template-columns:repeat(2,1fr)}.links{display:none}.menu{display:block}.toolbar{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.detail-grid{grid-template-columns:1fr}.detail-grid img{max-width:280px;margin:auto}.author-card{grid-template-columns:1fr;text-align:center}.author-card img{margin:auto}}
-@media(max-width:640px){.catalog{grid-template-columns:1fr}.metric-grid{grid-template-columns:1fr 1fr}.metric:nth-child(2){border-right:0}.hero-books img{width:190px}.hero-books img:nth-child(1){left:0}.hero-books img:nth-child(2){left:25%}.hero-books img:nth-child(3){right:0}.cover{height:430px}.checklist{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.topbar .container{justify-content:center}.hero{padding-top:65px}.tabs{justify-content:center}}
 
-/* Portadas normalizadas a proporción editorial 2:3 */
-.hero-books{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:center;gap:18px;min-height:540px}
-.hero-books img{position:static;width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;object-position:center;background:#fff;border:8px solid rgba(255,255,255,.96);border-radius:10px;box-shadow:0 30px 55px rgba(0,0,0,.35);transform:none}
-.hero-books img:nth-child(1){transform:rotate(-4deg)}
-.hero-books img:nth-child(2){transform:translateY(-18px);z-index:2}
-.hero-books img:nth-child(3){transform:rotate(4deg)}
-.cover{height:auto;aspect-ratio:2/3;background:linear-gradient(145deg,#edf4fb,#fff);padding:16px;overflow:hidden}
-.cover img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;border-radius:8px;background:#fff;filter:drop-shadow(0 16px 20px rgba(7,26,45,.22))}
-.feature-cover{display:flex;justify-content:center;align-items:center;padding:28px;background:linear-gradient(145deg,rgba(255,255,255,.85),rgba(232,242,251,.88));border:1px solid var(--line);border-radius:24px}
-.feature-cover img{display:block;width:min(100%,430px);height:auto;aspect-ratio:2/3;object-fit:cover;border-radius:8px;background:white;box-shadow:0 24px 36px rgba(7,26,45,.18)}
-.detail-grid{grid-template-columns:minmax(230px,320px) 1fr}
-.detail-grid img{display:block;width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;background:#fff;padding:0;border-radius:8px;box-shadow:0 16px 30px rgba(7,26,45,.14)}
-.author-card>img[src*="trucos-calculo"]{width:210px;height:315px;object-fit:cover;border-radius:8px;box-shadow:0 16px 28px rgba(7,26,45,.15)}
-@media(max-width:960px){.hero-books{min-height:auto;max-width:760px;margin:20px auto 0}.feature-cover{min-height:auto}}
-@media(max-width:640px){.hero-books{gap:8px}.hero-books img{border-width:4px}.hero-books img:nth-child(1){transform:rotate(-3deg)}.hero-books img:nth-child(2){transform:translateY(-8px)}.hero-books img:nth-child(3){transform:rotate(3deg)}.cover{padding:12px}}
-</style></head><body>
-<div class="topbar"><div class="container"><span>Biblioteca académica de David Milán</span><span>EBAU / PAU · Universidad · eBooks</span></div></div>
-<header class="header"><nav class="container nav"><a class="brand" href="#inicio"><img src="assets/logo-david-milan.svg.png" alt="David Milán Academy"></a><div class="links"><a href="#catalogo">Libros</a><a href="#catalogo">EBAU / PAU</a><a href="#universidad">Universidad</a><a href="#ebooks">eBooks</a><a href="#autor">Autor</a></div><div><button id="themeBtn" class="icon-btn" aria-label="Cambiar tema">◐</button><button class="icon-btn menu" aria-label="Menú">☰</button></div></nav></header>
+/* ---------- 8. RESPONSIVE ---------- */
+@media(max-width:1080px){
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr}
+}
+@media(max-width:980px){
+  section{padding:72px 0}
+  .hero{padding:76px 0 96px}
+  .hero-grid,.featured-grid,.contact-grid{grid-template-columns:1fr}
+  .hero-grid{text-align:center;gap:44px}
+  .hero p.lead{margin-inline:auto}
+  .hero-actions,.hero-note{justify-content:center}
+  .shelf{max-width:560px;margin-inline:auto}
+  .grid,.cards-3,.quotes,.posts{grid-template-columns:repeat(2,1fr)}
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .stat:nth-child(2){border-right:0}
+  .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .toolbar{grid-template-columns:1fr}
+  .detail{grid-template-columns:1fr}
+  .detail-cover img{max-width:240px;margin-inline:auto}
+  .nav-links{
+    position:fixed;inset:82px 0 auto 0;flex-direction:column;align-items:stretch;gap:0;
+    background:var(--card);border-bottom:1px solid var(--line);box-shadow:var(--shadow-l);
+    padding:.5rem 0;display:none;max-height:calc(100vh - 82px);overflow:auto}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:1rem 4%;border-bottom:1px solid var(--line)}
+  .nav-links a::after{display:none}
+  .burger{display:grid}
+}
+@media(max-width:680px){
+  body{font-size:16px}
+  section{padding:58px 0}
+  .grid,.cards-3,.quotes,.posts,.steps,.checks,.form .row,.foot-grid{grid-template-columns:1fr}
+  .shelf{gap:10px}
+  .book:nth-child(2){transform:translateY(-18px)}
+  .stats{margin-top:-30px}
+  .stat b{font-size:1.7rem}
+  .bookcard .cover{padding:14px}
+  .bookcard .badge{left:24px;top:24px}
+  .bookcard .quick{display:none}
+  .sheet-body{padding:1.2rem}
+  .topbar .container{justify-content:center;text-align:center}
+  .legal{justify-content:center;text-align:center}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;animation-iteration-count:1!important;
+    transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
+@media print{
+  .header,.topbar,.strip,.totop,.modal,.hero-actions,.newsletter,.form{display:none!important}
+  body{background:#fff;color:#000}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#catalogo">Saltar al catálogo</a>
+
+<!-- ======================= TOPBAR ======================= -->
+<div class="topbar">
+  <div class="container">
+    <span>Editorial académica independiente <b class="dot">·</b> Envíos a través de Amazon</span>
+    <span><a href="#muestras">Muestras gratuitas</a> <b class="dot">·</b> <a href="#contacto">Contacto</a></span>
+  </div>
+</div>
+
+<!-- ======================= CABECERA ======================= -->
+<header class="header" id="header">
+  <nav class="container nav" aria-label="Navegación principal">
+    <a class="brand" href="#inicio" aria-label="David Milán Academy, inicio">
+      <img class="mark" src="assets/logo-david-milan.svg" alt="" width="46" height="46">
+      <span class="word">David Milán<small>Academy &amp; Editorial</small></span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#catalogo">Catálogo</a>
+      <a href="#colecciones">Colecciones</a>
+      <a href="#universidad">Universidad</a>
+      <a href="#blog">Blog</a>
+      <a href="#faq">Preguntas</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <div class="nav-tools">
+      <button class="icon-btn" id="themeBtn" type="button" aria-label="Cambiar tema">◐</button>
+      <a class="btn btn-gold btn-sm" href="#catalogo" id="navCta">Ver libros</a>
+      <button class="icon-btn burger" id="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">☰</button>
+    </div>
+  </nav>
+</header>
+
 <main id="inicio">
-<section class="hero"><div class="container hero-grid"><div><div class="eyebrow">◆ Editorial académica independiente</div><h1>Aprende con método.<br><span>Avanza con confianza.</span></h1><p>Manuales rigurosos, visuales y prácticos para Selectividad, universidad y formación técnica. Teoría clara, ejercicios resueltos paso a paso y materiales diseñados para aprender de verdad.</p><div class="actions"><a class="btn primary" href="#catalogo">Explorar catálogo</a><button class="btn secondary details" data-slug="circuitos">Descubrir libro destacado</button></div></div><div class="hero-books"><img src="assets/ebau-matematicas.webp" alt="Matemáticas EBAU"><img src="assets/universidad-teoria-circuitos.webp" alt="Teoría de Circuitos"><img src="assets/ebau-fisica.webp" alt="Física EBAU"></div></div></section>
-<div class="container metrics"><div class="metric-grid"><div class="metric"><strong>5</strong><span>títulos académicos</span></div><div class="metric"><strong>150+</strong><span>ejercicios por manual</span></div><div class="metric"><strong>3</strong><span>líneas editoriales</span></div><div class="metric"><strong>100%</strong><span>enfoque práctico</span></div></div></div>
-<section id="catalogo"><div class="container"><div class="section-head"><span class="tag">Catálogo editorial</span><h2>Encuentra el libro que necesitas</h2><p>Busca por materia o filtra por etapa educativa.</p></div><div class="toolbar"><label class="search"><span>⌕</span><input id="search" type="search" placeholder="Buscar por título, asignatura o categoría"></label><div class="tabs"><button class="tab active" data-filter="all">Todos</button><button class="tab" data-filter="ebau">EBAU / PAU</button><button class="tab" data-filter="universidad">Universidad</button><button class="tab" data-filter="ebook">eBooks</button></div></div><div id="catalog" class="catalog"></div></div></section>
-<section class="feature" id="universidad"><div class="container feature-grid"><div class="feature-cover"><img src="assets/universidad-teoria-circuitos.webp" alt="Universidad Teoría de Circuitos"></div><div class="feature-copy"><span class="tag">Libro universitario destacado</span><h2>Universidad: Teoría de Circuitos</h2><p>Una guía integral para comprender los circuitos eléctricos desde las leyes fundamentales hasta Laplace, filtros, cuadripolos, potencia y sistemas trifásicos.</p><div class="checklist"><div class="check">12 capítulos progresivos</div><div class="check">Ejemplos resueltos paso a paso</div><div class="check">Problemas de dificultad creciente</div><div class="check">Esquemas profesionales</div><div class="check">Test de autoevaluación</div><div class="check">Simulación y aplicaciones</div></div><div class="actions"><button class="btn primary details" data-slug="circuitos">Ver ficha completa</button><button class="btn dark preview" data-preview="assets/muestra-universidad-teoria-circuitos.pdf">Abrir muestra</button></div></div></div></section>
-<section id="ebooks"><div class="container"><div class="section-head"><span class="tag">Colección digital</span><h2>eBooks para aprender y entrenar la mente</h2><p>Contenidos prácticos y accesibles para estudiar a tu ritmo.</p></div><div class="author-card"><img src="assets/trucos-calculo-mental.webp" alt="Trucos de cálculo mental"><div><h3>Trucos de Cálculo Mental del Mundo</h3><p>Historia, lógica y práctica de técnicas aritméticas de distintas culturas. Aprende patrones, porcentajes, cuadrados, raíces y estrategias rápidas sin depender siempre de la calculadora.</p><div class="actions"><button class="btn dark details" data-slug="calculo">Ver sinopsis</button><a class="btn primary" href="https://www.amazon.es/dp/B0HBLZB51K" target="_blank" rel="noopener">Comprar en Amazon</a></div></div></div></div></section>
-<section id="autor"><div class="container"><div class="section-head"><span class="tag">El autor</span><h2>David Milán</h2><p>Escritor, ingeniero y psicólogo. Creador de manuales académicos orientados a transformar contenidos complejos en explicaciones claras, visuales y aplicables.</p></div><div class="author-card"><img src="assets/logo-david-milan.svg.png" alt="Logotipo de David Milán Academy" style="width:min(100%,300px);height:auto;object-fit:contain"><div><h3>David Milán Academy & Editorial</h3><p>Una línea editorial centrada en Selectividad, universidad, ingeniería, ciencias y aprendizaje práctico. Cada libro combina rigor, claridad y una metodología progresiva para que el estudiante no solo memorice, sino que comprenda.</p></div></div></div></section>
-<section class="cta"><div class="container"><h2>Una biblioteca para cada etapa de tu formación</h2><p>Desde la EBAU hasta la universidad, encuentra teoría, problemas, ejemplos y herramientas para avanzar con seguridad.</p><a class="btn primary" href="#catalogo">Ver todos los libros</a></div></section>
-</main>
-<footer><div class="container"><div class="footer-grid"><div><a class="brand" href="#inicio" style="color:white"><img src="assets/logo-david-milan.svg.png" alt="David Milán Academy"></a><p style="margin-top:1rem;max-width:440px">Manuales académicos, preparación EBAU/PAU, libros universitarios y eBooks.</p></div><div><h4>Catálogo</h4><a href="#catalogo">EBAU / PAU</a><a href="#universidad">Universidad</a><a href="#ebooks">eBooks</a></div><div><h4>Información</h4><a href="#autor">Sobre el autor</a><a href="#catalogo">Todos los libros</a><a href="assets/muestra-universidad-teoria-circuitos.pdf" target="_blank">Muestra gratuita</a></div></div><div class="copy">© <span id="year"></span> David Milán. Todos los derechos reservados.</div></div></footer>
-<div class="modal" id="detailModal"><div class="modal-card"><div class="modal-head"><strong id="detailTitle">Ficha del libro</strong><button class="close">✕</button></div><div class="modal-body" id="detailBody"></div></div></div>
-<div class="modal" id="previewModal"><div class="modal-card"><div class="modal-head"><strong>Vista previa del libro</strong><button class="close">✕</button></div><iframe id="previewFrame" title="Vista previa PDF"></iframe></div></div>
-<script>
-const books=[
-{slug:'calculo',category:'ebook',badge:'eBook',cover:'assets/trucos-calculo-mental.webp',title:'TRUCOS DE CÁLCULO MENTAL DEL MUNDO',subtitle:'Historia, lógica y práctica de técnicas aritméticas de distintas culturas',meta:'Matemáticas · Agilidad mental · David Milán',amazon:'https://www.amazon.es/dp/B0HBLZB51K',preview:'',store:'',synopsis:`Aprende a calcular más rápido que nunca.\n\n¿Sigues utilizando la calculadora para operaciones sencillas? Con las técnicas que encontrarás en este libro descubrirás que el cálculo mental puede ser mucho más fácil, rápido y divertido de lo que imaginas.\n\nEn Trucos de Cálculo Mental aprenderás decenas de estrategias utilizadas por profesores, estudiantes y amantes de las matemáticas para resolver operaciones con mayor rapidez y confianza.\n\nIncluye técnicas explicadas paso a paso, trucos para multiplicaciones y divisiones rápidas, porcentajes, potencias, cuadrados, raíces, ejemplos resueltos, ejercicios y curiosidades matemáticas.\n\nEntrena tu mente. Descubre los patrones ocultos de los números. Convierte el cálculo mental en una de tus mejores habilidades.`},
-{slug:'matematicas',category:'ebau',badge:'EBAU / PAU',cover:'assets/ebau-matematicas.webp',title:'EBAU / PAU / SELECTIVIDAD MATEMÁTICAS',subtitle:'Ejercicios de Selectividad resueltos paso a paso',meta:'Matemáticas II · Acceso a la Universidad',amazon:'https://www.amazon.es/EBAU-PAU-SELECTIVIDAD-MATEM%C3%81TICAS-EJERCICIOS/dp/B0FK3VM64K/',preview:'',store:'',synopsis:`Este libro es una guía práctica y completa para superar con éxito la asignatura de Matemáticas en la EBAU / PAU / Selectividad.\n\nContiene una recopilación de ejercicios oficiales de todas las provincias, organizados por bloques y resueltos paso a paso, con explicaciones claras y razonadas.\n\nIncluye ejercicios reales clasificados por tema, resoluciones detalladas con comentarios y bloques de Análisis Matemático y Geometría y Vectores. Es un recurso ideal tanto para repasar como para prepararse desde cero.`},
-{slug:'quimica',category:'ebau',badge:'EBAU / PAU',cover:'assets/ebau-quimica.webp',title:'QUÍMICA EBAU / PAU / SELECTIVIDAD',subtitle:'Más de 150 ejercicios oficiales resueltos paso a paso',meta:'Química · 2.º de Bachillerato',amazon:'https://www.amazon.es/Qu%C3%ADmica-EBAU-Selectividad-David-Mil%C3%A1n/dp/B0FRT3L1WG/',preview:'',store:'',synopsis:`Este manual es tu ruta directa para dominar la Química de Selectividad. Reúne más de 150 ejercicios oficiales resueltos paso a paso, explicados con claridad y acompañados de recordatorios prácticos para evitar errores típicos en el examen.\n\nCombina teoría esencial con práctica intensiva y pautas de examen. Está organizado por estequiometría, disoluciones, gases, termoquímica, equilibrio, ácido-base, redox, cinética, estructura atómica, enlace químico y orgánica básica.\n\nIncluye esquemas, fórmulas clave, trucos de cálculo y consejos para gestionar el tiempo y presentar correctamente cada ejercicio.`},
-{slug:'fisica',category:'ebau',badge:'EBAU / PAU',cover:'assets/ebau-fisica.webp',title:'FÍSICA EBAU / PAU / SELECTIVIDAD',subtitle:'Preparación completa para 2.º de Bachillerato',meta:'Física · Más de 150 problemas',amazon:'https://www.amazon.es/F%C3%ADsica-EBAU-Selectividad-David-Mil%C3%A1n/dp/B0G4M5TP3Z/',preview:'',store:'',synopsis:`La herramienta definitiva para dominar la Física de 2.º de Bachillerato y superar la Selectividad con excelencia.\n\nMás que una colección de problemas, es un curso completo de preparación que cubre todo el currículo oficial español. Incluye más de 150 ejercicios resueltos, teoría sintetizada, razonamiento físico paso a paso y gráficos vectoriales de gran claridad.\n\nTrabaja interacción gravitatoria, electromagnetismo, ondas, óptica y física moderna, e incorpora un formulario resumido para repasos de última hora.`},
-{slug:'circuitos',category:'universidad',badge:'Universidad',cover:'assets/universidad-teoria-circuitos.webp',title:'UNIVERSIDAD: TEORÍA DE CIRCUITOS',subtitle:'Fundamentos del análisis de circuitos eléctricos',meta:'Ingeniería · Volumen I · David Milán',amazon:'',preview:'assets/muestra-universidad-teoria-circuitos.pdf',store:'',synopsis:`Domina la Teoría de Circuitos desde sus fundamentos hasta un nivel universitario. Este libro reúne la teoría esencial, ejemplos resueltos paso a paso, problemas propuestos y aplicaciones reales para que comprendas el funcionamiento de los circuitos eléctricos con seguridad.\n\nUna guía completa para estudiantes de ingeniería y futuros profesionales que quieren aprender, aprobar y, sobre todo, entender. Incluye corriente alterna, potencia, resonancia, filtros, Laplace, cuadripolos, sistemas trifásicos y simulación.`}
-];
-const catalog=document.getElementById('catalog');
-function cardHTML(b){return `<article class="card" data-category="${b.category}" data-search="${(b.title+' '+b.subtitle+' '+b.meta).toLowerCase()}"><div class="cover"><span class="badge">${b.badge}</span><img src="${b.cover}" alt="Portada ${b.title}"></div><div class="body"><h3>${b.title}</h3><div class="meta">${b.meta}</div><p>${b.subtitle}</p><div class="card-actions"><button class="btn dark details" data-slug="${b.slug}">Ver ficha</button>${b.amazon?`<a class="btn outline" href="${b.amazon}" target="_blank" rel="noopener">Amazon</a>`:`<button class="btn outline" disabled>Próximamente</button>`}</div></div></article>`}
-catalog.innerHTML=books.map(cardHTML).join('');
-const tabs=document.querySelectorAll('.tab');const search=document.getElementById('search');
-function applyFilters(){const active=document.querySelector('.tab.active').dataset.filter;const q=search.value.trim().toLowerCase();document.querySelectorAll('.card').forEach(c=>{const okCat=active==='all'||c.dataset.category===active;const okSearch=!q||c.dataset.search.includes(q);c.classList.toggle('hidden',!(okCat&&okSearch))})}
-tabs.forEach(t=>t.addEventListener('click',()=>{tabs.forEach(x=>x.classList.remove('active'));t.classList.add('active');applyFilters()}));search.addEventListener('input',applyFilters);
-const modal=document.getElementById('detailModal'),previewModal=document.getElementById('previewModal');
-document.addEventListener('click',e=>{const btn=e.target.closest('.details');if(btn){const b=books.find(x=>x.slug===btn.dataset.slug);document.getElementById('detailTitle').textContent=b.title;document.getElementById('detailBody').innerHTML=`<div class="detail-grid"><img src="${b.cover}" alt="${b.title}"><div><div class="tag">${b.badge}</div><h2>${b.title}</h2><h3>${b.subtitle}</h3><p>${b.synopsis}</p><div class="actions">${b.amazon?`<a class="btn primary" href="${b.amazon}" target="_blank" rel="noopener">Comprar en Amazon</a>`:''}${b.preview?`<button class="btn dark preview" data-preview="${b.preview}">Vista previa</button>`:''}${b.store?`<a class="btn outline" href="${b.store}" target="_blank">Comprar eBook</a>`:''}</div></div></div>`;modal.classList.add('open')}
-const p=e.target.closest('.preview');if(p){document.getElementById('previewFrame').src=p.dataset.preview;previewModal.classList.add('open')}});
-document.querySelectorAll('.close').forEach(b=>b.addEventListener('click',()=>b.closest('.modal').classList.remove('open')));document.querySelectorAll('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)m.classList.remove('open')}));document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.modal').forEach(m=>m.classList.remove('open'))});
-const themeBtn=document.getElementById('themeBtn');const saved=localStorage.getItem('dm-theme');if(saved)document.documentElement.dataset.theme=saved;themeBtn.addEventListener('click',()=>{const next=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=next;localStorage.setItem('dm-theme',next);themeBtn.textContent=next==='dark'?'☀':'◐'});
-document.getElementById('year').textContent=new Date().getFullYear();
 
-</script></body></html>
+<!-- ======================= HERO ======================= -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow on-dark">Editorial académica independiente</span>
+      <h1>Aprende con método.<br><em>Avanza con confianza.</em></h1>
+      <p class="lead">Manuales rigurosos y visuales para Selectividad, universidad e ingeniería. Teoría explicada de verdad, ejercicios resueltos paso a paso y material pensado para que entiendas, no para que memorices.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#catalogo">Explorar el catálogo</a>
+        <button class="btn btn-ghost js-preview" type="button" data-preview="assets/muestra-universidad-teoria-circuitos.pdf" data-title="Teoría de Circuitos — muestra gratuita">Leer una muestra</button>
+      </div>
+      <p class="hero-note"><span aria-hidden="true">★★★★★</span> Manuales usados por estudiantes de Bachillerato e ingeniería en toda España</p>
+    </div>
+    <div class="shelf" id="shelf"></div>
+  </div>
+</section>
+
+<!-- ======================= CIFRAS ======================= -->
+<div class="container stats">
+  <div class="stats-grid">
+    <div class="stat"><b data-count="5">0</b><span>títulos publicados</span></div>
+    <div class="stat"><b data-count="150" data-suffix="+">0</b><span>ejercicios por manual</span></div>
+    <div class="stat"><b data-count="3">0</b><span>líneas editoriales</span></div>
+    <div class="stat"><b data-count="100" data-suffix="%">0</b><span>enfoque práctico</span></div>
+  </div>
+</div>
+
+<div class="strip" aria-hidden="true">
+  <div class="track">
+    <span><i>◆</i>EBAU / PAU</span><span><i>◆</i>Universidad</span><span><i>◆</i>Ingeniería</span>
+    <span><i>◆</i>eBooks</span><span><i>◆</i>Ejercicios resueltos</span><span><i>◆</i>Muestras gratuitas</span>
+    <span><i>◆</i>EBAU / PAU</span><span><i>◆</i>Universidad</span><span><i>◆</i>Ingeniería</span>
+    <span><i>◆</i>eBooks</span><span><i>◆</i>Ejercicios resueltos</span><span><i>◆</i>Muestras gratuitas</span>
+  </div>
+</div>
+
+<!-- ======================= CATÁLOGO ======================= -->
+<section id="catalogo">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Catálogo editorial</span>
+      <h2>Encuentra el libro que necesitas</h2>
+      <p>Filtra por etapa educativa, ordena a tu gusto y abre la ficha técnica completa de cada título.</p>
+    </div>
+
+    <div class="toolbar reveal">
+      <label class="field">
+        <span class="sr">Buscar en el catálogo</span>
+        <span class="ico" aria-hidden="true">⌕</span>
+        <input id="q" type="search" placeholder="Buscar por título, asignatura, tema o ISBN…" autocomplete="off">
+      </label>
+      <label class="field">
+        <span class="sr">Ordenar por</span>
+        <select id="sort">
+          <option value="destacado">Orden: destacados</option>
+          <option value="az">Título (A–Z)</option>
+          <option value="za">Título (Z–A)</option>
+          <option value="nuevo">Más recientes</option>
+          <option value="paginas">Más extensos</option>
+        </select>
+      </label>
+      <button class="btn btn-outline" id="reset" type="button">Limpiar</button>
+    </div>
+
+    <div class="filters reveal" role="group" aria-label="Filtrar por categoría">
+      <button class="chip" type="button" data-filter="all" aria-pressed="true">Todos</button>
+      <button class="chip" type="button" data-filter="ebau" aria-pressed="false">EBAU / PAU</button>
+      <button class="chip" type="button" data-filter="universidad" aria-pressed="false">Universidad</button>
+      <button class="chip" type="button" data-filter="ebook" aria-pressed="false">eBooks</button>
+      <button class="chip" type="button" data-filter="muestra" aria-pressed="false">Con muestra gratuita</button>
+    </div>
+
+    <p class="result-count" id="count" aria-live="polite"></p>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<!-- ======================= DESTACADO ======================= -->
+<section class="featured" id="universidad">
+  <div class="container featured-grid">
+    <div class="featured-cover reveal">
+      <img src="assets/universidad-teoria-circuitos.webp" alt="Portada de Universidad: Teoría de Circuitos, volumen I" width="1000" height="1500" loading="lazy">
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">Título universitario destacado</span>
+      <h2>Teoría de Circuitos, Volumen I</h2>
+      <p style="color:var(--muted)">De la ley de Ohm al análisis matricial, los transitorios y la corriente alterna. Cada concepto se explica tres veces: la intuición física, el modelo matemático y la aplicación industrial real.</p>
+      <ul class="checks">
+        <li>Intuición física antes que fórmula</li>
+        <li>Ejemplos resueltos paso a paso</li>
+        <li>Problemas por niveles de dificultad</li>
+        <li>Esquemas eléctricos profesionales</li>
+        <li>Tests de autoevaluación</li>
+        <li>Mapas conceptuales por capítulo</li>
+      </ul>
+      <div class="hero-actions" style="margin-top:1.2rem">
+        <button class="btn btn-navy js-detail" type="button" data-slug="circuitos">Ver ficha completa</button>
+        <button class="btn btn-gold js-preview" type="button" data-preview="assets/muestra-universidad-teoria-circuitos.pdf" data-title="Teoría de Circuitos — muestra gratuita">Leer muestra gratuita</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= COLECCIONES ======================= -->
+<section id="colecciones">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Líneas editoriales</span>
+      <h2>Tres colecciones, un mismo método</h2>
+      <p>Cada colección mantiene la misma estructura pedagógica y se adapta al nivel de exigencia de su etapa.</p>
+    </div>
+    <div class="cards-3">
+      <article class="tile reveal">
+        <div class="glyph" aria-hidden="true">✎</div>
+        <h3>Preparación EBAU / PAU</h3>
+        <p>Ejercicios oficiales de todas las provincias, clasificados por bloques y resueltos con el razonamiento completo. Matemáticas, Física y Química.</p>
+        <p style="margin-top:1rem"><button class="btn btn-outline btn-sm js-goto" data-filter="ebau" type="button">Ver colección</button></p>
+      </article>
+      <article class="tile reveal">
+        <div class="glyph" aria-hidden="true">⚙</div>
+        <h3>Biblioteca de Ingeniería</h3>
+        <p>Manuales universitarios con teoría rigurosa, simulación, aplicaciones industriales y problemas de dificultad creciente. Abierta por Teoría de Circuitos.</p>
+        <p style="margin-top:1rem"><button class="btn btn-outline btn-sm js-goto" data-filter="universidad" type="button">Ver colección</button></p>
+      </article>
+      <article class="tile reveal">
+        <div class="glyph" aria-hidden="true">◈</div>
+        <h3>Colección digital</h3>
+        <p>eBooks prácticos para entrenar habilidades concretas: cálculo mental, técnicas de estudio y recursos de aprendizaje aplicado.</p>
+        <p style="margin-top:1rem"><button class="btn btn-outline btn-sm js-goto" data-filter="ebook" type="button">Ver colección</button></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= MÉTODO ======================= -->
+<section style="background:var(--card-2);border-block:1px solid var(--line)">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">El método</span>
+      <h2>Por qué estos libros se entienden</h2>
+      <p>Todos los capítulos siguen la misma secuencia, del concepto a la aplicación.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><h4>La intuición</h4><p>Una analogía física o cotidiana que explica qué está pasando realmente antes de ver una sola fórmula.</p></div>
+      <div class="step reveal"><h4>El modelo</h4><p>La formulación matemática rigurosa, deducida paso a paso y con las unidades siempre justificadas.</p></div>
+      <div class="step reveal"><h4>La práctica</h4><p>Ejemplos resueltos con planteamiento, resolución, comprobación y conclusión. Sin saltos ocultos.</p></div>
+      <div class="step reveal"><h4>La aplicación</h4><p>Problemas propuestos por niveles, tests de autoevaluación y casos reales de industria e ingeniería.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= OPINIONES ======================= -->
+<section id="opiniones">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Opiniones</span>
+      <h2>Lo que dicen los lectores</h2>
+      <p>Reseñas de estudiantes y docentes que trabajan con los manuales.</p>
+    </div>
+    <div class="quotes" id="quotes"></div>
+  </div>
+</section>
+
+<!-- ======================= MUESTRAS ======================= -->
+<section class="band" id="muestras">
+  <div class="container">
+    <span class="eyebrow on-dark" style="justify-content:center">Descarga libre</span>
+    <h2 style="margin:1rem 0">Lee antes de comprar</h2>
+    <p>La muestra de <em>Teoría de Circuitos</em> incluye los tres primeros capítulos completos: magnitudes eléctricas, métodos de análisis y circuitos de primer orden, con sus ejemplos y tests.</p>
+    <div class="hero-actions" style="justify-content:center">
+      <button class="btn btn-gold js-preview" type="button" data-preview="assets/muestra-universidad-teoria-circuitos.pdf" data-title="Teoría de Circuitos — muestra gratuita">Abrir la muestra</button>
+      <a class="btn btn-ghost" href="assets/muestra-universidad-teoria-circuitos.pdf" download>Descargar en PDF</a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= BLOG ======================= -->
+<section id="blog">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Blog académico</span>
+      <h2>Artículos para estudiar mejor</h2>
+      <p>Estrategia de examen, errores frecuentes y contenidos que se explican mal en clase.</p>
+    </div>
+    <div class="posts" id="posts"></div>
+  </div>
+</section>
+
+<!-- ======================= FAQ ======================= -->
+<section id="faq" style="background:var(--card-2);border-block:1px solid var(--line)">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Preguntas frecuentes</span>
+      <h2>Todo lo que sueles preguntar</h2>
+    </div>
+    <div class="faq" id="faqList"></div>
+  </div>
+</section>
+
+<!-- ======================= NEWSLETTER ======================= -->
+<section class="band">
+  <div class="container">
+    <span class="eyebrow on-dark" style="justify-content:center">Novedades</span>
+    <h2 style="margin:1rem 0">Recibe los próximos títulos antes que nadie</h2>
+    <p>Avisos de nuevas publicaciones, capítulos de muestra y recursos de estudio. Sin spam.</p>
+    <form class="newsletter" id="newsForm" novalidate>
+      <input type="email" id="newsEmail" placeholder="tu@correo.com" aria-label="Tu correo electrónico" required>
+      <button class="btn btn-gold" type="submit">Suscribirme</button>
+    </form>
+    <p class="privacy">Al suscribirte aceptas recibir correos de David Milán Academy. Puedes darte de baja cuando quieras.</p>
+  </div>
+</section>
+
+<!-- ======================= CONTACTO ======================= -->
+<section id="contacto">
+  <div class="container contact-grid">
+    <div class="reveal">
+      <span class="eyebrow">Contacto</span>
+      <h2 style="font-size:clamp(1.8rem,3.4vw,2.6rem);margin:.9rem 0 1rem">¿Hablamos?</h2>
+      <p style="color:var(--muted)">Dudas sobre un libro, uso en centros educativos, colaboraciones o erratas detectadas: escribe y te respondo personalmente.</p>
+      <ul class="contact-list" style="margin-top:1.6rem">
+        <li><span class="glyph" aria-hidden="true">✉</span><div><b>Correo</b><span id="mailText">contacto@davidmilanacademy.com</span></div></li>
+        <li><span class="glyph" aria-hidden="true">⌂</span><div><b>Centros educativos</b><span>Condiciones especiales para adopción en aula</span></div></li>
+        <li><span class="glyph" aria-hidden="true">⚑</span><div><b>Erratas</b><span>Se corrigen en la siguiente reimpresión y se publican aquí</span></div></li>
+      </ul>
+    </div>
+    <form class="form reveal" id="contactForm" novalidate>
+      <div class="row">
+        <div><label for="cName">Nombre</label><input id="cName" name="nombre" required></div>
+        <div><label for="cMail">Correo</label><input id="cMail" name="correo" type="email" required></div>
+      </div>
+      <p class="err" id="errTop">Revisa los campos marcados.</p>
+      <label for="cSubject">Asunto</label>
+      <select id="cSubject" name="asunto">
+        <option>Consulta sobre un libro</option>
+        <option>Uso en centro educativo</option>
+        <option>Colaboración o prensa</option>
+        <option>Aviso de errata</option>
+        <option>Otro</option>
+      </select>
+      <label for="cMsg">Mensaje</label>
+      <textarea id="cMsg" name="mensaje" required></textarea>
+      <button class="btn btn-navy" type="submit" style="width:100%">Enviar mensaje</button>
+      <p style="color:var(--muted);font-size:.8rem;margin-top:.8rem">Se abrirá tu gestor de correo con el mensaje preparado.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ======================= PIE ======================= -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#inicio">
+          <img class="mark" src="assets/logo-david-milan.svg" alt="" width="46" height="46" loading="lazy">
+          <span class="word">David Milán<small>Academy &amp; Editorial</small></span>
+        </a>
+        <p style="margin-top:1.2rem;max-width:360px;font-size:.92rem">Editorial académica independiente dedicada a manuales de Bachillerato, universidad e ingeniería. Rigor, claridad y método.</p>
+      </div>
+      <div>
+        <h4>Catálogo</h4>
+        <a href="#catalogo">Todos los libros</a>
+        <a class="js-goto" data-filter="ebau" href="#catalogo">EBAU / PAU</a>
+        <a class="js-goto" data-filter="universidad" href="#catalogo">Universidad</a>
+        <a class="js-goto" data-filter="ebook" href="#catalogo">eBooks</a>
+      </div>
+      <div>
+        <h4>Editorial</h4>
+        <a href="#colecciones">Colecciones</a>
+        <a href="#blog">Blog</a>
+        <a href="#opiniones">Opiniones</a>
+        <a href="#muestras">Muestras gratuitas</a>
+      </div>
+      <div>
+        <h4>Ayuda</h4>
+        <a href="#faq">Preguntas frecuentes</a>
+        <a href="#contacto">Contacto</a>
+        <a href="assets/muestra-universidad-teoria-circuitos.pdf" target="_blank" rel="noopener">Muestra en PDF</a>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© <span id="year"></span> David Milán Paz. Todos los derechos reservados.</span>
+      <span>Diseño y contenidos propios · Hecho en España</span>
+    </div>
+  </div>
+</footer>
+
+<button class="totop" id="totop" type="button" aria-label="Volver arriba">↑</button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- ======================= MODALES ======================= -->
+<div class="modal" id="mDetail" role="dialog" aria-modal="true" aria-labelledby="mDetailTitle">
+  <div class="sheet">
+    <div class="sheet-head"><strong id="mDetailTitle">Ficha del libro</strong><button class="close" type="button" aria-label="Cerrar">✕</button></div>
+    <div class="sheet-body" id="mDetailBody"></div>
+  </div>
+</div>
+
+<div class="modal" id="mPreview" role="dialog" aria-modal="true" aria-labelledby="mPreviewTitle">
+  <div class="sheet">
+    <div class="sheet-head"><strong id="mPreviewTitle">Vista previa</strong><button class="close" type="button" aria-label="Cerrar">✕</button></div>
+    <iframe id="pdfFrame" title="Vista previa del libro en PDF"></iframe>
+    <div class="pdf-foot">
+      <span>Muestra gratuita · uso personal</span>
+      <span><a id="pdfOpen" href="#" target="_blank" rel="noopener"><b>Abrir en pestaña nueva</b></a> · <a id="pdfDown" href="#" download><b>Descargar</b></a></span>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="mPost" role="dialog" aria-modal="true" aria-labelledby="mPostTitle">
+  <div class="sheet">
+    <div class="sheet-head"><strong id="mPostTitle">Artículo</strong><button class="close" type="button" aria-label="Cerrar">✕</button></div>
+    <div class="sheet-body article" id="mPostBody"></div>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   DAVID MILÁN ACADEMY — lógica de la web
+   ------------------------------------------------------------
+   ⚠️  PENDIENTE DE COMPLETAR (busca "REVISAR"):
+       · ISBN y nº de páginas reales de cada título
+       · Año de publicación de los títulos de EBAU
+       · Correo de contacto real
+       · Reseñas: sustituir las de ejemplo por reseñas reales
+   ============================================================ */
+
+const CONTACTO = 'contacto@davidmilanacademy.com';   // REVISAR: correo real
+
+/* ---------- Datos del catálogo ---------- */
+const books = [
+  {
+    slug:'circuitos', cat:'universidad', badge:'Universidad', destacado:1,
+    title:'Teoría de Circuitos, Volumen I',
+    subtitle:'Fundamentos, métodos de análisis y circuitos de primer orden',
+    meta:'Biblioteca de Ingeniería · Volumen I',
+    cover:'assets/universidad-teoria-circuitos.webp',
+    thumb:'assets/universidad-teoria-circuitos-400.webp',
+    isbn:null, asin:null, paginas:null, anio:2026, edicion:'Primera edición',
+    formato:'Tapa blanda y edición digital', idioma:'Español', nivel:'Grado en Ingeniería',
+    amazon:'', preview:'assets/muestra-universidad-teoria-circuitos.pdf',
+    sinopsis:[
+      'Domina la Teoría de Circuitos desde sus fundamentos hasta el nivel exigido en una escuela de ingeniería. Cada concepto se aborda tres veces: qué ocurre físicamente, cómo se modela matemáticamente y para qué sirve en la industria.',
+      'Los ejemplos se resuelven con la estructura completa —enunciado, datos, planteamiento, resolución paso a paso, comprobación y conclusión— para que nunca haya un salto sin justificar. Los problemas propuestos están clasificados por exigencia: básico, medio, avanzado, tipo examen y diseño en ingeniería.',
+      'Incluye tests de autoevaluación con soluciones, mapas conceptuales por capítulo, esquemas eléctricos profesionales y bloques de curiosidad histórica y errores frecuentes.'
+    ],
+    indice:[
+      ['1','Introducción a las magnitudes eléctricas','Carga y corriente · Tensión · Potencia y convención pasiva de signos · Ley de Ohm'],
+      ['2','Métodos de análisis de circuitos','Leyes de Kirchhoff · Análisis nodal · Supernodos · Análisis de mallas · Supermallas'],
+      ['3','Circuitos de primer orden (RC y RL)','Condensador e inductor · Respuesta transitoria · Constante de tiempo · Ecuación universal'],
+      ['4+','Continuación del volumen','Corriente alterna · Potencia y resonancia · Filtros · Transformada de Laplace · Cuadripolos · Sistemas trifásicos · Simulación']
+    ],
+    puntos:['Aplicaciones industriales reales','Convención pasiva de signos explicada de cero','Formulación matricial tipo SPICE','Tests con soluciones razonadas']
+  },
+  {
+    slug:'matematicas', cat:'ebau', badge:'EBAU / PAU', destacado:2,
+    title:'Matemáticas II — EBAU / PAU / Selectividad',
+    subtitle:'Ejercicios oficiales de todas las provincias resueltos paso a paso',
+    meta:'Matemáticas II · Acceso a la Universidad',
+    cover:'assets/ebau-matematicas.webp', thumb:'assets/ebau-matematicas-400.webp',
+    isbn:null, asin:'B0FK3VM64K', paginas:null, anio:2025, edicion:'Versión actualizada',
+    formato:'Tapa blanda y Kindle', idioma:'Español', nivel:'2.º de Bachillerato',
+    amazon:'https://www.amazon.es/EBAU-PAU-SELECTIVIDAD-MATEM%C3%81TICAS-EJERCICIOS/dp/B0FK3VM64K/',
+    preview:'',
+    sinopsis:[
+      'Guía práctica y completa para superar la asignatura de Matemáticas en la EBAU / PAU / Selectividad, con una recopilación de ejercicios oficiales de todas las provincias.',
+      'Los ejercicios están organizados por bloques y resueltos paso a paso, con explicaciones razonadas y comentarios sobre el criterio de corrección.',
+      'Cubre los bloques de Análisis Matemático y de Geometría y Vectores. Sirve tanto para repasar como para preparar la asignatura desde cero.'
+    ],
+    indice:[
+      ['1','Análisis matemático','Límites y continuidad · Derivadas y aplicaciones · Integrales definidas e indefinidas · Representación de funciones'],
+      ['2','Álgebra lineal','Matrices y determinantes · Sistemas de ecuaciones · Discusión de sistemas con parámetros'],
+      ['3','Geometría y vectores','Vectores en el espacio · Rectas y planos · Distancias, ángulos y posiciones relativas'],
+      ['4','Probabilidad y estadística','Probabilidad condicionada · Teorema de Bayes · Distribuciones']
+    ],
+    puntos:['Ejercicios reales de cada provincia','Resolución con criterio de corrección','Clasificados por bloque temático','Ideal para repaso final']
+  },
+  {
+    slug:'fisica', cat:'ebau', badge:'EBAU / PAU', destacado:3,
+    title:'Física — EBAU / PAU / Selectividad',
+    subtitle:'Preparación completa de 2.º de Bachillerato con más de 150 problemas',
+    meta:'Física · 2.º de Bachillerato',
+    cover:'assets/ebau-fisica.webp', thumb:'assets/ebau-fisica-400.webp',
+    isbn:null, asin:'B0G4M5TP3Z', paginas:null, anio:2025, edicion:'Primera edición',
+    formato:'Tapa blanda y Kindle', idioma:'Español', nivel:'2.º de Bachillerato',
+    amazon:'https://www.amazon.es/F%C3%ADsica-EBAU-Selectividad-David-Mil%C3%A1n/dp/B0G4M5TP3Z/',
+    preview:'',
+    sinopsis:[
+      'La herramienta definitiva para dominar la Física de 2.º de Bachillerato y afrontar la Selectividad con seguridad.',
+      'Más que una colección de problemas, es un curso completo que cubre el currículo oficial: más de 150 ejercicios resueltos, teoría sintetizada, razonamiento físico paso a paso y gráficos vectoriales de gran claridad.',
+      'Incluye un formulario resumido pensado para los repasos de última hora.'
+    ],
+    indice:[
+      ['1','Interacción gravitatoria','Campo gravitatorio · Leyes de Kepler · Energía y satélites'],
+      ['2','Interacción electromagnética','Campo eléctrico · Campo magnético · Inducción y ley de Faraday'],
+      ['3','Ondas','Movimiento ondulatorio · Sonido · Fenómenos ondulatorios'],
+      ['4','Óptica','Óptica geométrica · Espejos y lentes · Naturaleza de la luz'],
+      ['5','Física moderna','Efecto fotoeléctrico · Física nuclear · Relatividad']
+    ],
+    puntos:['+150 problemas resueltos','Gráficos vectoriales claros','Formulario de repaso','Currículo oficial completo']
+  },
+  {
+    slug:'quimica', cat:'ebau', badge:'EBAU / PAU', destacado:4,
+    title:'Química — EBAU / PAU / Selectividad',
+    subtitle:'Más de 150 ejercicios oficiales resueltos paso a paso',
+    meta:'Química · 2.º de Bachillerato',
+    cover:'assets/ebau-quimica.webp', thumb:'assets/ebau-quimica-400.webp',
+    isbn:null, asin:'B0FRT3L1WG', paginas:null, anio:2025, edicion:'Primera edición',
+    formato:'Tapa blanda y Kindle', idioma:'Español', nivel:'2.º de Bachillerato',
+    amazon:'https://www.amazon.es/Qu%C3%ADmica-EBAU-Selectividad-David-Mil%C3%A1n/dp/B0FRT3L1WG/',
+    preview:'',
+    sinopsis:[
+      'Tu ruta directa para dominar la Química de Selectividad: más de 150 ejercicios oficiales resueltos paso a paso y explicados con claridad.',
+      'Combina teoría esencial con práctica intensiva y recordatorios para evitar los errores típicos que más puntos cuestan en el examen.',
+      'Incluye esquemas, fórmulas clave, trucos de cálculo y consejos para gestionar el tiempo y presentar correctamente cada ejercicio.'
+    ],
+    indice:[
+      ['1','Cálculos básicos','Estequiometría · Disoluciones · Gases'],
+      ['2','Energía y equilibrio','Termoquímica · Equilibrio químico · Cinética'],
+      ['3','Reacciones','Ácido-base · Reacciones redox y electroquímica'],
+      ['4','Estructura','Estructura atómica · Enlace químico · Propiedades periódicas'],
+      ['5','Orgánica','Nomenclatura · Isomería · Reacciones orgánicas básicas']
+    ],
+    puntos:['+150 ejercicios oficiales','Errores típicos señalados','Trucos de cálculo','Gestión del tiempo de examen']
+  },
+  {
+    slug:'calculo', cat:'ebook', badge:'eBook', destacado:5,
+    title:'Trucos de Cálculo Mental del Mundo',
+    subtitle:'Historia, lógica y práctica de técnicas aritméticas de distintas culturas',
+    meta:'Colección digital · Agilidad mental',
+    cover:'assets/trucos-calculo-mental.webp', thumb:'assets/trucos-calculo-mental-400.webp',
+    isbn:null, asin:'B0HBLZB51K', paginas:null, anio:2025, edicion:'Edición digital',
+    formato:'eBook (Kindle)', idioma:'Español', nivel:'Todos los niveles',
+    amazon:'https://www.amazon.es/dp/B0HBLZB51K', preview:'',
+    sinopsis:[
+      '¿Sigues usando la calculadora para operaciones sencillas? Este libro reúne decenas de estrategias de cálculo mental de distintas culturas, explicadas paso a paso.',
+      'Multiplicaciones y divisiones rápidas, porcentajes, potencias, cuadrados, raíces y patrones ocultos de los números, con ejemplos resueltos y ejercicios para entrenar.',
+      'Cada técnica se acompaña de su origen histórico y de la lógica matemática que la sustenta: no son trucos de memoria, son métodos que se entienden.'
+    ],
+    indice:[
+      ['1','Los cimientos','Descomposición · Compensación · Redondeo inteligente'],
+      ['2','Multiplicar sin papel','Métodos por decenas · Cuadrados y casi-cuadrados · Multiplicación cruzada'],
+      ['3','Dividir y estimar','Divisibilidad · División rápida · Estimación con control de error'],
+      ['4','Porcentajes y fracciones','Cálculo comercial · Descuentos encadenados · Regla del 1 %'],
+      ['5','Métodos del mundo','Técnicas védicas, japonesas y europeas · Historia y comparación']
+    ],
+    puntos:['Técnicas de varias culturas','Explicación lógica, no memorística','Ejercicios de entrenamiento','Curiosidades históricas']
+  }
+];
+
+/* ---------- Reseñas ----------
+   ⚠️ REVISAR: son textos de EJEMPLO para ver el diseño.
+   Sustitúyelos por reseñas reales (con permiso) antes de publicar. */
+const resenas = [
+  {texto:'La parte de supernodos y supermallas está explicada mejor que en los apuntes de clase. El formato de ejemplo resuelto con comprobación final es justo lo que me faltaba.', autor:'Estudiante de Grado', rol:'Ingeniería Eléctrica', ini:'EG'},
+  {texto:'Lo uso para preparar los exámenes de Física con mis alumnos de segundo. Tener ejercicios de todas las provincias clasificados por bloque ahorra muchísimo tiempo.', autor:'Docente de Bachillerato', rol:'Física y Química', ini:'DB'},
+  {texto:'Llegué a Selectividad sin saber plantear las integrales. Con las resoluciones paso a paso entendí el procedimiento, no solo el resultado.', autor:'Estudiante de 2.º de Bachillerato', rol:'Matemáticas II', ini:'EB'}
+];
+
+/* ---------- Blog ---------- */
+const posts = [
+  {
+    id:'signos', fecha:'Julio 2026', glyph:'±', titulo:'La convención pasiva de signos, de una vez por todas',
+    resumen:'El 80 % de los errores en un examen de circuitos no son de cálculo: son de signo. Aquí va la regla que no falla.',
+    cuerpo:[
+      ['p','En cuanto un circuito tiene más de dos elementos, la pregunta deja de ser "cuánto vale" y pasa a ser "con qué signo". Y ahí es donde se pierden los puntos.'],
+      ['h','La regla en una línea'],
+      ['p','Si la corriente entra por el terminal positivo de un elemento, se aplica p = +v·i y el elemento consume energía. Si sale por el positivo, el elemento la está suministrando.'],
+      ['h','Por qué funciona'],
+      ['p','La potencia es la variación de energía en el tiempo. Al multiplicar tensión por corriente estamos midiendo cuánta energía cruza el elemento por segundo; el signo solo nos dice en qué dirección lo hace. Una batería descargándose da potencia negativa porque entrega; una resistencia siempre da positiva porque disipa.'],
+      ['h','La comprobación que te salva'],
+      ['p','En un circuito cerrado la suma de todas las potencias debe ser exactamente cero. Si tras resolver un problema sumas las potencias y no te da cero, tienes un error de signo en algún punto. Es la comprobación más barata que existe y casi nadie la hace.']
+    ]
+  },
+  {
+    id:'ebau', fecha:'Junio 2026', glyph:'⏱', titulo:'Cómo repartir el tiempo en un examen de EBAU',
+    resumen:'Terminar el examen no es cuestión de ir rápido, sino de decidir bien en los primeros cinco minutos.',
+    cuerpo:[
+      ['p','La mayoría de los suspensos por tiempo no vienen de escribir despacio, sino de haber empezado por el problema equivocado.'],
+      ['h','Los cinco primeros minutos'],
+      ['p','Léelo todo antes de escribir nada. Marca cada ejercicio con una de tres etiquetas: lo domino, lo dudo, ni idea. Empieza siempre por los que dominas, aunque estén al final del examen.'],
+      ['h','La regla del punto por minuto'],
+      ['p','Divide el tiempo total entre la puntuación total. Si tienes 90 minutos y 10 puntos, un ejercicio de 2 puntos no puede consumir más de 18 minutos. Cuando lo supere, pasa al siguiente y vuelve al final.'],
+      ['h','Lo que sí puntúa siempre'],
+      ['ul',['El planteamiento, aunque no llegues al resultado','El esquema o dibujo del problema','Las unidades correctas en el resultado','La justificación física o razonamiento escrito']],
+      ['p','Un ejercicio bien planteado y sin terminar puntúa bastante más que uno en blanco. Nunca dejes nada vacío.']
+    ]
+  },
+  {
+    id:'transitorio', fecha:'Mayo 2026', glyph:'τ', titulo:'Qué significa realmente la constante de tiempo',
+    resumen:'Tau no es un número que se sustituye en una fórmula: es la memoria del circuito.',
+    cuerpo:[
+      ['p','Cuando un circuito con condensador o bobina cambia de estado, no salta al valor final: se aproxima a él. La constante de tiempo mide con qué rapidez lo hace.'],
+      ['h','El 63,2 %'],
+      ['p','Transcurrido un tiempo igual a tau, la variable ha recorrido el 63,2 % del cambio total que le queda por hacer. No el 63,2 % del valor final: el 63,2 % del camino pendiente. Esa distinción es la que hace que la curva sea exponencial y no una recta.'],
+      ['h','La regla de los cinco tau'],
+      ['p','Al cabo de cinco constantes de tiempo se ha completado el 99,3 % de la transición. En ingeniería se da por terminado el régimen transitorio. Es una convención, pero es la que usan tanto los libros como los laboratorios.'],
+      ['h','Lo que hay que calcular primero'],
+      ['p','Antes de tocar la fórmula universal, resuelve tres cosas: el valor inicial justo después de conmutar, el valor final con tiempo infinito y la resistencia equivalente que ve el componente tras el cambio. Con esos tres datos el problema ya está resuelto.']
+    ]
+  }
+];
+
+/* ---------- FAQ ---------- */
+const faqs = [
+  ['¿Dónde puedo comprar los libros?','Los títulos publicados están disponibles en Amazon, en tapa blanda y en edición digital según el caso. Cada ficha del catálogo incluye su enlace directo. Los títulos sin enlace todavía están en preparación.'],
+  ['¿Puedo leer una parte antes de comprar?','Sí. La muestra gratuita de Teoría de Circuitos incluye los tres primeros capítulos completos y puedes leerla o descargarla desde esta misma web, sin registro.'],
+  ['¿Los ejercicios están realmente resueltos paso a paso?','Sí, y con una estructura fija: enunciado, datos, planteamiento, resolución razonada, comprobación del resultado y conclusión. No hay pasos ocultos ni "de aquí se deduce que".'],
+  ['¿Sirven si estudio en otra comunidad autónoma?','Los manuales de EBAU recogen ejercicios oficiales de todas las provincias de España, precisamente para cubrir las diferencias entre comunidades. La teoría y el método son comunes a todas.'],
+  ['Soy docente, ¿puedo usarlos en clase?','Sí. Escribe a través del formulario de contacto indicando tu centro y la asignatura para consultar las condiciones de adopción en aula.'],
+  ['He encontrado una errata, ¿qué hago?','Avísame por el formulario de contacto indicando la página. Las erratas confirmadas se corrigen en la siguiente reimpresión.'],
+  ['¿Habrá más títulos?','Sí. La Biblioteca de Ingeniería continúa con nuevos volúmenes y hay títulos en preparación en otras materias. Puedes suscribirte para recibir el aviso.']
+];
+
+/* ============================================================
+   Utilidades
+   ============================================================ */
+const $  = (s,c=document)=>c.querySelector(s);
+const $$ = (s,c=document)=>[...c.querySelectorAll(s)];
+const esc = s => String(s ?? '').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+const dato = v => (v===null||v===undefined||v==='') ? '—' : v;
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function toast(msg){
+  const t=$('#toast'); t.textContent=msg; t.classList.add('show');
+  clearTimeout(t._t); t._t=setTimeout(()=>t.classList.remove('show'),3600);
+}
+
+/* ============================================================
+   Estantería del hero
+   ============================================================ */
+$('#shelf').innerHTML = ['matematicas','circuitos','fisica'].map(s=>{
+  const b = books.find(x=>x.slug===s);
+  return `<button class="book js-detail" type="button" data-slug="${b.slug}" aria-label="Ver ficha de ${esc(b.title)}">
+    <img src="${b.cover}" alt="Portada de ${esc(b.title)}" width="1000" height="1500" fetchpriority="high">
+    <span class="spine-label">Ver ficha</span>
+  </button>`;
+}).join('');
+
+/* ============================================================
+   Catálogo: render, filtro, orden y búsqueda
+   ============================================================ */
+const grid=$('#grid'), count=$('#count'), qInput=$('#q'), sortSel=$('#sort');
+let filtro='all';
+
+function cardHTML(b){
+  const compra = b.amazon
+    ? `<a class="btn btn-outline" href="${esc(b.amazon)}" target="_blank" rel="noopener">Comprar</a>`
+    : `<button class="btn btn-outline" type="button" disabled>Próximamente</button>`;
+  return `<article class="bookcard reveal in tilt">
+    <div class="cover">
+      <span class="pill pill-gold badge">${esc(b.badge)}</span>
+      <img src="${esc(b.thumb)}" alt="Portada de ${esc(b.title)}" width="400" height="600" loading="lazy" decoding="async">
+      ${b.preview?`<button class="btn btn-navy btn-sm quick js-preview" type="button" data-preview="${esc(b.preview)}" data-title="${esc(b.title)} — muestra">Leer muestra</button>`:''}
+    </div>
+    <div class="body">
+      <h3>${esc(b.title)}</h3>
+      <div class="meta">${esc(b.meta)}</div>
+      <p>${esc(b.subtitle)}</p>
+      <div class="specs">
+        <span><b>${dato(b.anio)}</b> · ${esc(b.edicion)}</span>
+        <span>${esc(b.formato)}</span>
+      </div>
+      <div class="actions">
+        <button class="btn btn-navy js-detail" type="button" data-slug="${esc(b.slug)}">Ver ficha</button>
+        ${compra}
+      </div>
+    </div>
+  </article>`;
+}
+
+function render(){
+  const q = qInput.value.trim().toLowerCase();
+  let lista = books.filter(b=>{
+    const okCat = filtro==='all' ? true : (filtro==='muestra' ? !!b.preview : b.cat===filtro);
+    const blob = [b.title,b.subtitle,b.meta,b.badge,b.nivel,b.asin,b.isbn,
+                  ...(b.puntos||[]), ...b.indice.map(i=>i[1]+' '+i[2])].join(' ').toLowerCase();
+    return okCat && (!q || blob.includes(q));
+  });
+  const s = sortSel.value;
+  lista.sort((a,b)=>{
+    if(s==='az') return a.title.localeCompare(b.title,'es');
+    if(s==='za') return b.title.localeCompare(a.title,'es');
+    if(s==='nuevo') return (b.anio||0)-(a.anio||0);
+    if(s==='paginas') return (b.paginas||0)-(a.paginas||0);
+    return a.destacado-b.destacado;
+  });
+  grid.innerHTML = lista.length
+    ? lista.map(cardHTML).join('')
+    : `<div class="empty"><h3 style="margin-bottom:.6rem">Sin resultados</h3>
+       <p>No hay títulos que coincidan con esa búsqueda. Prueba con otro término o vuelve a “Todos”.</p></div>`;
+  count.textContent = `${lista.length} ${lista.length===1?'título':'títulos'}${filtro!=='all'?' en este filtro':''}${q?` para “${q}”`:''}`;
+  if(!reduce) initTilt();
+}
+
+$$('.chip').forEach(c=>c.addEventListener('click',()=>{
+  $$('.chip').forEach(x=>x.setAttribute('aria-pressed', String(x===c)));
+  filtro=c.dataset.filter; render();
+}));
+qInput.addEventListener('input', render);
+sortSel.addEventListener('change', render);
+$('#reset').addEventListener('click',()=>{
+  qInput.value=''; sortSel.value='destacado'; filtro='all';
+  $$('.chip').forEach(x=>x.setAttribute('aria-pressed', String(x.dataset.filter==='all')));
+  render();
+});
+render();
+
+/* Accesos directos a un filtro concreto */
+$$('.js-goto').forEach(el=>el.addEventListener('click',e=>{
+  e.preventDefault();
+  const f=el.dataset.filter;
+  $$('.chip').forEach(x=>x.setAttribute('aria-pressed', String(x.dataset.filter===f)));
+  filtro=f; render();
+  $('#catalogo').scrollIntoView({behavior: reduce?'auto':'smooth'});
+}));
+
+/* Efecto 3D al mover el ratón sobre las tarjetas */
+function initTilt(){
+  if(matchMedia('(hover: none)').matches) return;
+  $$('.tilt').forEach(card=>{
+    card.addEventListener('mousemove',e=>{
+      const r=card.getBoundingClientRect();
+      const px=(e.clientX-r.left)/r.width-.5, py=(e.clientY-r.top)/r.height-.5;
+      card.style.transform=`perspective(900px) rotateY(${px*5}deg) rotateX(${-py*5}deg) translateY(-6px)`;
+    });
+    card.addEventListener('mouseleave',()=>{card.style.transform=''});
+  });
+}
+
+/* ============================================================
+   Reseñas, blog y FAQ
+   ============================================================ */
+$('#quotes').innerHTML = resenas.map(r=>`
+  <figure class="quote reveal">
+    <p>${esc(r.texto)}</p>
+    <figcaption class="who"><span class="av">${esc(r.ini)}</span>
+      <span><b>${esc(r.autor)}</b><span>${esc(r.rol)}</span></span>
+    </figcaption>
+  </figure>`).join('');
+
+$('#posts').innerHTML = posts.map(p=>`
+  <button class="post reveal js-post" type="button" data-id="${p.id}">
+    <div class="head" aria-hidden="true">${p.glyph}</div>
+    <div class="body">
+      <span class="date">${esc(p.fecha)}</span>
+      <h3>${esc(p.titulo)}</h3>
+      <p>${esc(p.resumen)}</p>
+      <span class="btn btn-outline btn-sm" style="margin-top:1rem">Leer artículo</span>
+    </div>
+  </button>`).join('');
+
+$('#faqList').innerHTML = faqs.map(([q,a],i)=>`
+  <div class="qa reveal" data-i="${i}">
+    <button type="button" aria-expanded="false"><span>${esc(q)}</span><span class="plus" aria-hidden="true">+</span></button>
+    <div class="answer"><p>${esc(a)}</p></div>
+  </div>`).join('');
+
+$$('.qa button').forEach(btn=>btn.addEventListener('click',()=>{
+  const qa=btn.parentElement, ans=$('.answer',qa), open=btn.getAttribute('aria-expanded')==='true';
+  $$('.qa').forEach(o=>{
+    o.removeAttribute('open');
+    $('button',o).setAttribute('aria-expanded','false');
+    $('.answer',o).style.maxHeight='0px';
+  });
+  if(!open){ qa.setAttribute('open',''); btn.setAttribute('aria-expanded','true');
+    ans.style.maxHeight=ans.scrollHeight+'px'; }
+}));
+
+/* ============================================================
+   Modales
+   ============================================================ */
+let ultimoFoco=null;
+function abrir(m){
+  ultimoFoco=document.activeElement;
+  m.classList.add('open'); document.body.classList.add('locked');
+  ($('.close',m)||m).focus();
+}
+function cerrar(m){
+  m.classList.remove('open');
+  if(!$$('.modal.open').length) document.body.classList.remove('locked');
+  if(m.id==='mPreview') $('#pdfFrame').removeAttribute('src');
+  if(ultimoFoco) ultimoFoco.focus();
+}
+$$('.close').forEach(b=>b.addEventListener('click',()=>cerrar(b.closest('.modal'))));
+$$('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)cerrar(m)}));
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape') $$('.modal.open').forEach(cerrar);
+  if(e.key==='Tab'){ // foco atrapado dentro del modal abierto
+    const m=$('.modal.open'); if(!m) return;
+    const f=$$('a[href],button:not([disabled]),input,select,textarea,iframe',m).filter(el=>el.offsetParent!==null);
+    if(!f.length) return;
+    const first=f[0], last=f[f.length-1];
+    if(e.shiftKey && document.activeElement===first){e.preventDefault();last.focus()}
+    else if(!e.shiftKey && document.activeElement===last){e.preventDefault();first.focus()}
+  }
+});
+
+/* --- Ficha del libro con pestañas --- */
+function fichaHTML(b){
+  const filas = [
+    ['Colección', b.meta],
+    ['Nivel', b.nivel],
+    ['Edición', `${b.edicion}${b.anio?`, ${b.anio}`:''}`],
+    ['Formato', b.formato],
+    ['Idioma', b.idioma],
+    ['Páginas', dato(b.paginas)],
+    ['ISBN', dato(b.isbn)],
+    ['Referencia Amazon (ASIN)', dato(b.asin)],
+    ['Autor', 'David Milán Paz'],
+    ['Editorial', 'David Milán Academy & Editorial']
+  ];
+  return `<div class="detail">
+    <div class="detail-cover">
+      <img src="${esc(b.cover)}" alt="Portada de ${esc(b.title)}" width="1000" height="1500">
+      ${b.amazon?`<a class="btn btn-gold" href="${esc(b.amazon)}" target="_blank" rel="noopener">Comprar en Amazon</a>`:`<button class="btn btn-outline" type="button" disabled>Próximamente</button>`}
+      ${b.preview?`<button class="btn btn-navy js-preview" type="button" data-preview="${esc(b.preview)}" data-title="${esc(b.title)} — muestra">Leer muestra gratuita</button>`:''}
+    </div>
+    <div>
+      <span class="pill pill-blue">${esc(b.badge)}</span>
+      <h2>${esc(b.title)}</h2>
+      <p class="sub">${esc(b.subtitle)}</p>
+      <div style="display:flex;gap:.4rem;flex-wrap:wrap">
+        ${(b.puntos||[]).map(p=>`<span class="pill pill-line">${esc(p)}</span>`).join('')}
+      </div>
+      <div class="tabs" role="tablist">
+        <button role="tab" aria-selected="true"  data-panel="sinopsis">Sinopsis</button>
+        <button role="tab" aria-selected="false" data-panel="ficha">Ficha técnica</button>
+        <button role="tab" aria-selected="false" data-panel="indice">Índice</button>
+      </div>
+      <div class="panel" data-panel="sinopsis">${b.sinopsis.map(p=>`<p>${esc(p)}</p>`).join('')}</div>
+      <div class="panel hidden" data-panel="ficha">
+        <table class="datasheet"><tbody>
+          ${filas.map(([k,v])=>`<tr><th scope="row">${esc(k)}</th><td>${esc(dato(v))}</td></tr>`).join('')}
+        </tbody></table>
+      </div>
+      <div class="panel hidden" data-panel="indice">
+        <ul class="toc">${b.indice.map(([n,t,d])=>`<li><b>${esc(n)}</b><div>${esc(t)}<span>${esc(d)}</span></div></li>`).join('')}</ul>
+      </div>
+    </div>
+  </div>`;
+}
+
+function abrirFicha(slug){
+  const b=books.find(x=>x.slug===slug); if(!b) return;
+  $('#mDetailTitle').textContent=b.title;
+  $('#mDetailBody').innerHTML=fichaHTML(b);
+  $$('#mDetailBody .tabs button').forEach(t=>t.addEventListener('click',()=>{
+    $$('#mDetailBody .tabs button').forEach(x=>x.setAttribute('aria-selected',String(x===t)));
+    $$('#mDetailBody .panel').forEach(p=>p.classList.toggle('hidden',p.dataset.panel!==t.dataset.panel));
+  }));
+  abrir($('#mDetail'));
+}
+
+/* --- Vista previa PDF --- */
+function abrirPreview(src,titulo){
+  $('#mPreviewTitle').textContent=titulo||'Vista previa';
+  $('#pdfFrame').src=src;
+  $('#pdfOpen').href=src; $('#pdfDown').href=src;
+  abrir($('#mPreview'));
+}
+
+/* --- Artículo del blog --- */
+function abrirPost(id){
+  const p=posts.find(x=>x.id===id); if(!p) return;
+  $('#mPostTitle').textContent=p.titulo;
+  $('#mPostBody').innerHTML =
+    `<span class="date" style="color:var(--muted);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase">${esc(p.fecha)}</span>
+     <h2 style="margin:.6rem 0 1.2rem">${esc(p.titulo)}</h2>` +
+    p.cuerpo.map(([t,c])=>{
+      if(t==='h') return `<h2>${esc(c)}</h2>`;
+      if(t==='ul') return `<ul>${c.map(li=>`<li>${esc(li)}</li>`).join('')}</ul>`;
+      return `<p>${esc(c)}</p>`;
+    }).join('');
+  abrir($('#mPost'));
+}
+
+/* Delegación global de clics */
+document.addEventListener('click',e=>{
+  const d=e.target.closest('.js-detail');  if(d) return abrirFicha(d.dataset.slug);
+  const v=e.target.closest('.js-preview'); if(v) return abrirPreview(v.dataset.preview, v.dataset.title);
+  const p=e.target.closest('.js-post');    if(p) return abrirPost(p.dataset.id);
+});
+
+/* ============================================================
+   Formularios
+   ============================================================ */
+const reMail=/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i;
+
+$('#newsForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const v=$('#newsEmail').value.trim();
+  if(!reMail.test(v)) return toast('Introduce un correo válido.');
+  /* Para conectarlo de verdad: sustituye estas líneas por el endpoint
+     de Mailchimp, Brevo, MailerLite o Formspree. */
+  toast('¡Gracias! Te avisaré de las novedades.');
+  e.target.reset();
+});
+
+$('#contactForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const n=$('#cName'), m=$('#cMail'), t=$('#cMsg'), err=$('#errTop');
+  const malo = !n.value.trim() || !reMail.test(m.value.trim()) || !t.value.trim();
+  err.classList.toggle('show',malo);
+  if(malo) return;
+  const asunto=encodeURIComponent(`[Web] ${$('#cSubject').value} — ${n.value.trim()}`);
+  const cuerpo=encodeURIComponent(`${t.value.trim()}\n\n—\n${n.value.trim()}\n${m.value.trim()}`);
+  window.location.href=`mailto:${CONTACTO}?subject=${asunto}&body=${cuerpo}`;
+  toast('Abriendo tu gestor de correo…');
+});
+$('#mailText').textContent=CONTACTO;
+
+/* ============================================================
+   Interfaz: tema, menú, scroll, contadores
+   ============================================================ */
+const themeBtn=$('#themeBtn');
+function setTheme(t){
+  document.documentElement.dataset.theme=t;
+  themeBtn.textContent = t==='dark' ? '☀' : '◐';
+  themeBtn.setAttribute('aria-label', t==='dark'?'Activar tema claro':'Activar tema oscuro');
+  const meta=$('meta[name="theme-color"]'); if(meta) meta.content = t==='dark'?'#04101c':'#071a2d';
+}
+let guardado=null; try{ guardado=localStorage.getItem('dm-theme'); }catch(_){}
+setTheme(guardado || (matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));
+themeBtn.addEventListener('click',()=>{
+  const next = document.documentElement.dataset.theme==='dark'?'light':'dark';
+  setTheme(next); try{ localStorage.setItem('dm-theme',next); }catch(_){}
+});
+
+const burger=$('#burger'), navLinks=$('#navLinks');
+burger.addEventListener('click',()=>{
+  const abierto=navLinks.classList.toggle('open');
+  burger.setAttribute('aria-expanded',String(abierto));
+  burger.textContent=abierto?'✕':'☰';
+});
+$$('#navLinks a').forEach(a=>a.addEventListener('click',()=>{
+  navLinks.classList.remove('open'); burger.setAttribute('aria-expanded','false'); burger.textContent='☰';
+}));
+
+const header=$('#header'), totop=$('#totop');
+addEventListener('scroll',()=>{
+  const y=scrollY;
+  header.classList.toggle('scrolled', y>10);
+  totop.classList.toggle('show', y>700);
+},{passive:true});
+totop.addEventListener('click',()=>scrollTo({top:0,behavior: reduce?'auto':'smooth'}));
+
+/* Aparición al hacer scroll */
+if('IntersectionObserver' in window && !reduce){
+  const io=new IntersectionObserver(en=>en.forEach(x=>{
+    if(x.isIntersecting){ x.target.classList.add('in'); io.unobserve(x.target); }
+  }),{threshold:.12});
+  $$('.reveal').forEach(el=>io.observe(el));
+}else{ $$('.reveal').forEach(el=>el.classList.add('in')); }
+
+/* Contadores animados */
+const nums=$$('[data-count]');
+if('IntersectionObserver' in window && !reduce){
+  const io2=new IntersectionObserver(en=>en.forEach(x=>{
+    if(!x.isIntersecting) return;
+    const el=x.target, fin=+el.dataset.count, suf=el.dataset.suffix||'';
+    let t0=null;
+    const paso=ts=>{ t0??=ts; const p=Math.min((ts-t0)/1100,1);
+      el.textContent=Math.round(fin*(1-Math.pow(1-p,3)))+suf;
+      if(p<1) requestAnimationFrame(paso); };
+    requestAnimationFrame(paso); io2.unobserve(el);
+  }),{threshold:.5});
+  nums.forEach(n=>io2.observe(n));
+}else{ nums.forEach(n=>n.textContent=n.dataset.count+(n.dataset.suffix||'')); }
+
+$('#year').textContent=new Date().getFullYear();
+
+/* Datos estructurados para Google (SEO) */
+const ld={"@context":"https://schema.org","@type":"Organization","name":"David Milán Academy & Editorial",
+  "description":"Editorial académica independiente de manuales de Bachillerato, universidad e ingeniería.",
+  "founder":{"@type":"Person","name":"David Milán Paz"},
+  "makesOffer":books.filter(b=>b.amazon).map(b=>({"@type":"Book","name":b.title,"author":"David Milán Paz",
+    "inLanguage":"es","url":b.amazon}))};
+const tag=document.createElement('script'); tag.type='application/ld+json';
+tag.textContent=JSON.stringify(ld); document.head.appendChild(tag);
+</script>
+</body>
+</html>
