@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#071a2d">
 <meta name="color-scheme" content="light dark">
 <link rel="canonical" href="https://davidmilanacademy.com/">
-<link rel="icon" href="assets/logo-david-milan.svg" type="image/svg+xml">
+<link rel="icon" href="assets/logo-david-milan.svg.png" type="image/png">
 <link rel="alternate icon" href="assets/logo-david-milan.svg.png">
 <link rel="apple-touch-icon" href="assets/favicon-180.png">
 <meta property="og:type" content="website">
@@ -462,6 +462,181 @@ footer{background:#03101c;color:#a5b8cb;padding:64px 0 24px}
   .header,.topbar,.strip,.totop,.modal,.hero-actions,.newsletter,.form{display:none!important}
   body{background:#fff;color:#000}
 }
+
+/* ============================================================
+   AJUSTE DEFINITIVO DE PORTADAS — DAVID MILÁN ACADEMY
+   Las cubiertas se muestran completas, centradas y sin recortes.
+   Se mantiene el blog, las FAQ y el resto de funcionalidades.
+   ============================================================ */
+
+/* Hero: composición limpia, sin deformación tridimensional */
+.shelf{
+  perspective:none;
+  align-items:center;
+  gap:18px;
+}
+.book{
+  aspect-ratio:2/3;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transform:none;
+  transform-style:flat;
+}
+.book img{
+  width:100%;
+  height:100%;
+  aspect-ratio:auto;
+  object-fit:contain !important;
+  object-position:center;
+  padding:7px;
+  background:#fff;
+  border-radius:8px;
+  box-shadow:0 24px 44px rgba(0,0,0,.38);
+}
+.book::before{
+  display:none;
+}
+.book::after{
+  inset:7px;
+  border-radius:8px;
+}
+.book:nth-child(1){
+  transform:rotate(-3deg);
+}
+.book:nth-child(2){
+  transform:translateY(-18px);
+  z-index:3;
+}
+.book:nth-child(3){
+  transform:rotate(3deg);
+}
+.book:hover,
+.book:focus-visible{
+  transform:translateY(-9px) scale(1.025);
+  z-index:5;
+}
+.book:nth-child(2):hover,
+.book:nth-child(2):focus-visible{
+  transform:translateY(-27px) scale(1.025);
+}
+
+/* Catálogo: marco uniforme 2:3 y portada íntegra */
+.bookcard{
+  transform:none !important;
+}
+.bookcard:hover{
+  transform:translateY(-7px) !important;
+}
+.bookcard .cover{
+  aspect-ratio:2/3;
+  display:grid;
+  place-items:center;
+  padding:18px;
+  background:var(--cover-bg);
+  overflow:hidden;
+}
+.bookcard .cover img{
+  display:block;
+  width:100%;
+  height:100%;
+  max-width:100%;
+  max-height:100%;
+  aspect-ratio:auto;
+  object-fit:contain !important;
+  object-position:center;
+  background:#fff;
+  border-radius:7px;
+  box-shadow:0 16px 28px rgba(7,26,45,.22);
+  transform:none !important;
+}
+.bookcard:hover .cover img{
+  transform:scale(1.012) !important;
+}
+.bookcard .cover::after{
+  inset:18px;
+  border-radius:7px;
+}
+
+/* Libro universitario destacado: tamaño natural, sin recorte */
+.featured-cover{
+  min-height:560px;
+  padding:34px;
+}
+.featured-cover img{
+  display:block;
+  width:auto;
+  height:auto;
+  max-width:100%;
+  max-height:560px;
+  aspect-ratio:auto;
+  object-fit:contain !important;
+  object-position:center;
+  background:#fff;
+  border-radius:8px;
+  transform:none;
+}
+.featured-cover:hover img{
+  transform:scale(1.015);
+}
+
+/* Ficha emergente: portada completa */
+.detail-cover{
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+}
+.detail-cover img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:520px;
+  aspect-ratio:auto;
+  object-fit:contain !important;
+  object-position:center;
+  padding:8px;
+  background:var(--cover-bg);
+  border:1px solid var(--line);
+  border-radius:10px;
+  box-shadow:var(--shadow-m);
+}
+
+/* Ajustes móviles */
+@media(max-width:980px){
+  .featured-cover{
+    min-height:0;
+  }
+  .featured-cover img{
+    max-height:520px;
+  }
+}
+@media(max-width:680px){
+  .shelf{
+    gap:8px;
+  }
+  .book img{
+    padding:4px;
+  }
+  .book:nth-child(1){
+    transform:rotate(-2deg);
+  }
+  .book:nth-child(2){
+    transform:translateY(-10px);
+  }
+  .book:nth-child(3){
+    transform:rotate(2deg);
+  }
+  .bookcard .cover{
+    padding:12px;
+  }
+  .bookcard .cover::after{
+    inset:12px;
+  }
+  .featured-cover{
+    padding:20px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -479,7 +654,7 @@ footer{background:#03101c;color:#a5b8cb;padding:64px 0 24px}
 <header class="header" id="header">
   <nav class="container nav" aria-label="Navegación principal">
     <a class="brand" href="#inicio" aria-label="David Milán Academy, inicio">
-      <img class="mark" src="assets/logo-david-milan.svg" alt="" width="46" height="46">
+      <img class="mark" src="assets/logo-david-milan.svg.png" alt="Logotipo de David Milán Academy" width="46" height="46">
       <span class="word">David Milán<small>Academy &amp; Editorial</small></span>
     </a>
     <div class="nav-links" id="navLinks">
@@ -756,7 +931,7 @@ footer{background:#03101c;color:#a5b8cb;padding:64px 0 24px}
     <div class="foot-grid">
       <div class="foot-brand">
         <a class="brand" href="#inicio">
-          <img class="mark" src="assets/logo-david-milan.svg" alt="" width="46" height="46" loading="lazy">
+          <img class="mark" src="assets/logo-david-milan.svg.png" alt="Logotipo de David Milán Academy" width="46" height="46" loading="lazy">
           <span class="word">David Milán<small>Academy &amp; Editorial</small></span>
         </a>
         <p style="margin-top:1.2rem;max-width:360px;font-size:.92rem">Editorial académica independiente dedicada a manuales de Bachillerato, universidad e ingeniería. Rigor, claridad y método.</p>
@@ -1051,10 +1226,10 @@ function cardHTML(b){
   const compra = b.amazon
     ? `<a class="btn btn-outline" href="${esc(b.amazon)}" target="_blank" rel="noopener">Comprar</a>`
     : `<button class="btn btn-outline" type="button" disabled>Próximamente</button>`;
-  return `<article class="bookcard reveal in tilt">
+  return `<article class="bookcard reveal in">
     <div class="cover">
       <span class="pill pill-gold badge">${esc(b.badge)}</span>
-      <img src="${esc(b.thumb)}" alt="Portada de ${esc(b.title)}" width="400" height="600" loading="lazy" decoding="async">
+      <img src="${esc(b.cover)}" alt="Portada completa de ${esc(b.title)}" loading="lazy" decoding="async">
       ${b.preview?`<button class="btn btn-navy btn-sm quick js-preview" type="button" data-preview="${esc(b.preview)}" data-title="${esc(b.title)} — muestra">Leer muestra</button>`:''}
     </div>
     <div class="body">
@@ -1094,7 +1269,6 @@ function render(){
     : `<div class="empty"><h3 style="margin-bottom:.6rem">Sin resultados</h3>
        <p>No hay títulos que coincidan con esa búsqueda. Prueba con otro término o vuelve a “Todos”.</p></div>`;
   count.textContent = `${lista.length} ${lista.length===1?'título':'títulos'}${filtro!=='all'?' en este filtro':''}${q?` para “${q}”`:''}`;
-  if(!reduce) initTilt();
 }
 
 $$('.chip').forEach(c=>c.addEventListener('click',()=>{
