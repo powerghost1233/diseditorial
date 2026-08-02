@@ -625,6 +625,14 @@ footer{background:#03101c;color:#a5b8cb;padding:64px 0 24px}
   }
 }
 
+/* Sección de solicitud de formato electrónico */
+.ebook-contact{position:relative;overflow:hidden}
+.ebook-contact::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(620px 260px at 12% 30%,rgba(212,175,55,.16),transparent 70%),radial-gradient(680px 280px at 88% 70%,rgba(75,154,232,.18),transparent 72%)}
+.ebook-contact-grid{position:relative;z-index:1;max-width:900px}
+.ebook-contact h2{margin:1rem auto;max-width:760px}
+.ebook-contact p{max-width:720px}
+.ebook-contact-note{margin:1.15rem auto 0!important;font-size:.82rem!important;color:#9db8d0!important;letter-spacing:.03em}
+
 </style>
 </head>
 <body>
@@ -862,13 +870,29 @@ footer{background:#03101c;color:#a5b8cb;padding:64px 0 24px}
 </section>
 
 
+<!-- ======================= FORMATO ELECTRÓNICO ======================= -->
+<section id="formato-electronico" class="band ebook-contact">
+  <div class="container ebook-contact-grid">
+    <div class="reveal">
+      <span class="eyebrow on-dark">Edición digital</span>
+      <h2>¿Prefieres estudiar en formato electrónico?</h2>
+      <p>Algunos títulos también pueden estar disponibles en edición digital. Escríbeme indicando el libro que te interesa y te informaré personalmente sobre el formato, la disponibilidad y cómo adquirirlo.</p>
+      <div class="hero-actions" style="justify-content:center">
+        <a class="btn btn-gold js-ebook-contact" href="#contacto">Solicitar edición electrónica</a>
+        <a class="btn btn-ghost" href="mailto:davidmilanacademy@gmail.com?subject=Consulta%20sobre%20formato%20electrónico">Escribir por correo</a>
+      </div>
+      <p class="ebook-contact-note">Respuesta directa de David Milán Academy · Sin registros ni intermediarios</p>
+    </div>
+  </div>
+</section>
+
 <!-- ======================= CONTACTO ======================= -->
 <section id="contacto">
   <div class="container contact-grid">
     <div class="reveal">
       <span class="eyebrow">Contacto</span>
       <h2 style="font-size:clamp(1.8rem,3.4vw,2.6rem);margin:.9rem 0 1rem">¿Hablamos?</h2>
-      <p style="color:var(--muted)">Dudas sobre un libro o propuestas de colaboración: escribe y te respondo personalmente.</p>
+      <p style="color:var(--muted)">Dudas sobre un libro, disponibilidad en formato electrónico o propuestas de colaboración: escribe y te respondo personalmente.</p>
       <ul class="contact-list" style="margin-top:1.6rem">
         <li><span class="glyph" aria-hidden="true">✉</span><div><b>Correo</b><span id="mailText">davidmilanacademy@gmail.com</span></div></li>
       </ul>
@@ -882,6 +906,7 @@ footer{background:#03101c;color:#a5b8cb;padding:64px 0 24px}
       <label for="cSubject">Asunto</label>
       <select id="cSubject" name="asunto">
         <option>Consulta sobre un libro</option>
+        <option>Compra en formato electrónico</option>
         <option>Colaboración o prensa</option>
         <option>Otro</option>
       </select>
@@ -1057,7 +1082,7 @@ const books = [
     isbn:null, asin:'B0FRT3L1WG', paginas:null, anio:2025, edicion:'Primera edición',
     formato:'Tapa blanda y Kindle', idioma:'Español', nivel:'2.º de Bachillerato',
     amazon:'https://www.amazon.es/Qu%C3%ADmica-EBAU-Selectividad-David-Mil%C3%A1n/dp/B0FRT3L1WG/', ebook:'',
-    preview:'',
+    preview:'assets/muestra-ebau-quimica-david-milan.pdf',
     sinopsis:[
       'Tu ruta directa para dominar la Química de Selectividad: más de 150 ejercicios oficiales resueltos paso a paso y explicados con claridad.',
       'Combina teoría esencial con práctica intensiva y recordatorios para evitar los errores típicos que más puntos cuestan en el examen.',
@@ -1153,7 +1178,7 @@ const posts = [
 /* ---------- FAQ ---------- */
 const faqs = [
   ['¿Dónde puedo comprar los libros?','Los títulos publicados están disponibles en Amazon, en tapa blanda y en edición digital según el caso. Cada ficha del catálogo incluye su enlace directo. Los títulos sin enlace todavía están en preparación.'],
-  ['¿Puedo leer una parte antes de comprar?','Sí. La muestra gratuita de Teoría de Circuitos incluye los tres primeros capítulos completos y puedes leerla o descargarla desde esta misma web, sin registro.'],
+  ['¿Puedo leer una parte antes de comprar?','Sí. Sí. Los títulos que disponen de muestra incluyen un botón «Leer muestra» que abre el PDF dentro de esta misma web, sin registro. Actualmente puedes consultar las muestras de Teoría de Circuitos, Física y Química.'],
   ['¿Los ejercicios están realmente resueltos paso a paso?','Sí, y con una estructura fija: enunciado, datos, planteamiento, resolución razonada, comprobación del resultado y conclusión. No hay pasos ocultos ni "de aquí se deduce que".'],
   ['¿Sirven si estudio en otra comunidad autónoma?','Los manuales de EBAU recogen ejercicios oficiales de todas las provincias de España, precisamente para cubrir las diferencias entre comunidades. La teoría y el método son comunes a todas.'],
   ['¿Habrá más títulos?','Sí. La Biblioteca de Ingeniería continúa con nuevos volúmenes y hay títulos en preparación en otras materias. Puedes suscribirte para recibir el aviso.']
@@ -1199,8 +1224,8 @@ function cardHTML(b){
      disponible para el título. Puedes sustituirlo después por b.ebook. */
   const ebookUrl = b.ebook || b.amazon;
   const ebook = ebookUrl
-    ? `<a class="btn btn-gold" href="${esc(ebookUrl)}" target="_blank" rel="noopener">Comprar en eBook</a>`
-    : `<button class="btn btn-gold" type="button" disabled title="Añade el enlace del eBook para activar este botón">Comprar en eBook</button>`;
+    ? `<a class="btn btn-gold" href="${esc(ebookUrl)}" target="_blank" rel="noopener">Comprar en Amazon</a>`
+    : `<button class="btn btn-gold" type="button" disabled title="Añade el enlace del eBook para activar este botón">Comprar en Amazon</button>`;
 
   return `<article class="bookcard reveal in">
     <div class="cover">
@@ -1369,7 +1394,7 @@ function fichaHTML(b){
     <div class="detail-cover">
       <img src="${esc(b.cover)}" alt="Portada de ${esc(b.title)}" width="1000" height="1500">
       ${b.preview?`<button class="btn btn-outline js-preview" type="button" data-preview="${esc(b.preview)}" data-title="${esc(b.title)} — muestra">Leer muestra</button>`:`<button class="btn btn-outline" type="button" disabled>Leer muestra</button>`}
-      ${(b.ebook||b.amazon)?`<a class="btn btn-gold" href="${esc(b.ebook||b.amazon)}" target="_blank" rel="noopener">Comprar en eBook</a>`:`<button class="btn btn-gold" type="button" disabled>Comprar en eBook</button>`}
+      ${(b.ebook||b.amazon)?`<a class="btn btn-gold" href="${esc(b.ebook||b.amazon)}" target="_blank" rel="noopener">Comprar en Amazon</a>`:`<button class="btn btn-gold" type="button" disabled>Comprar en Amazon</button>`}
     </div>
     <div>
       <span class="pill pill-blue">${esc(b.badge)}</span>
@@ -1431,6 +1456,15 @@ function abrirPost(id){
 }
 
 /* Delegación global de clics */
+document.querySelectorAll('.js-ebook-contact').forEach(link=>{
+  link.addEventListener('click',()=>{
+    const subject=$('#cSubject');
+    const message=$('#cMsg');
+    if(subject) subject.value='Compra en formato electrónico';
+    if(message && !message.value.trim()) message.value='Hola, me interesa adquirir un libro de David Milán Academy en formato electrónico. El título que busco es: ';
+  });
+});
+
 document.addEventListener('click',e=>{
   const d=e.target.closest('.js-detail');  if(d) return abrirFicha(d.dataset.slug);
   const v=e.target.closest('.js-preview'); if(v) return abrirPreview(v.dataset.preview, v.dataset.title);
