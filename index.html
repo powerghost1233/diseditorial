@@ -7,7 +7,7 @@
 <meta name="description" content="Editorial académica independiente. Manuales de EBAU/PAU, libros universitarios de ingeniería y eBooks con teoría clara, ejercicios resueltos paso a paso y muestras gratuitas.">
 <meta name="author" content="David Milán">
 <meta name="theme-color" content="#071a2d">
-<meta name="color-scheme" content="light dark">
+<meta name="color-scheme" content="light">
 <link rel="canonical" href="https://davidmilanacademy.com/">
 <link rel="icon" href="assets/logo-david-milan.svg.png" type="image/png">
 <link rel="alternate icon" href="assets/logo-david-milan.svg.png">
@@ -46,17 +46,6 @@
   --sans:"Inter","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   --maxw:1240px;
   --ease:cubic-bezier(.22,.61,.36,1);
-}
-[data-theme="dark"]{
-  --navy:#04101c; --navy-2:#0a1f36; --navy-3:#12395f;
-  --blue:#4b9ae8; --blue-soft:#10243a;
-  --gold-soft:#241f10;
-  --paper:#050e18; --card:#0c1a29; --card-2:#0f2032;
-  --line:#1c3349;
-  --cover-bg:linear-gradient(150deg,#12253a,#0c1a29);
-  --shadow-s:0 4px 14px rgba(0,0,0,.30);
-  --shadow-m:0 14px 34px rgba(0,0,0,.40);
-  --shadow-l:0 28px 70px rgba(0,0,0,.55);
 }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -102,7 +91,6 @@ section{padding:96px 0}
 .btn-gold{background:linear-gradient(135deg,var(--gold-2),var(--gold));color:#2a1f00;box-shadow:0 8px 22px rgba(212,175,55,.32)}
 .btn-gold:hover{box-shadow:0 14px 30px rgba(212,175,55,.42)}
 .btn-navy{background:var(--navy);color:#fff}
-[data-theme="dark"] .btn-navy{background:var(--blue);color:#04101c}
 .btn-ghost{background:transparent;border-color:rgba(255,255,255,.3);color:#fff}
 .btn-ghost:hover{background:rgba(255,255,255,.1)}
 .btn-outline{background:var(--card);border-color:var(--line);color:var(--ink)}
@@ -223,7 +211,6 @@ section{padding:96px 0}
   font-weight:750;font-size:.9rem;cursor:pointer;transition:.2s}
 .chip:hover{border-color:var(--blue);color:var(--blue)}
 .chip[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
-[data-theme="dark"] .chip[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:#04101c}
 .result-count{color:var(--muted);font-size:.88rem;margin-bottom:26px}
 
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
@@ -252,8 +239,9 @@ section{padding:96px 0}
 .specs{display:flex;gap:.9rem;flex-wrap:wrap;color:var(--muted);font-size:.78rem;margin-top:.9rem;
   padding-top:.9rem;border-top:1px dashed var(--line)}
 .specs b{color:var(--ink-2);font-weight:700}
-.bookcard .actions{display:flex;gap:.55rem;margin-top:1.1rem}
-.bookcard .actions .btn{flex:1;padding:.7rem .5rem;font-size:.85rem}
+.bookcard .actions{display:grid;grid-template-columns:1fr 1fr;gap:.55rem;margin-top:1.1rem}
+.bookcard .actions .btn{width:100%;padding:.7rem .5rem;font-size:.82rem;white-space:normal;text-align:center}
+.bookcard .actions .full{grid-column:1/-1}
 .empty{grid-column:1/-1;text-align:center;padding:56px 20px;border:1.5px dashed var(--line);
   border-radius:var(--r-l);color:var(--muted)}
 
@@ -666,7 +654,6 @@ footer{background:#03101c;color:#a5b8cb;padding:64px 0 24px}
       <a href="#contacto">Contacto</a>
     </div>
     <div class="nav-tools">
-      <button class="icon-btn" id="themeBtn" type="button" aria-label="Cambiar tema">◐</button>
       <a class="btn btn-gold btn-sm" href="#catalogo" id="navCta">Ver libros</a>
       <button class="icon-btn burger" id="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">☰</button>
     </div>
@@ -874,19 +861,6 @@ footer{background:#03101c;color:#a5b8cb;padding:64px 0 24px}
   </div>
 </section>
 
-<!-- ======================= NEWSLETTER ======================= -->
-<section class="band">
-  <div class="container">
-    <span class="eyebrow on-dark" style="justify-content:center">Novedades</span>
-    <h2 style="margin:1rem 0">Recibe los próximos títulos antes que nadie</h2>
-    <p>Avisos de nuevas publicaciones, capítulos de muestra y recursos de estudio. Sin spam.</p>
-    <form class="newsletter" id="newsForm" novalidate>
-      <input type="email" id="newsEmail" placeholder="tu@correo.com" aria-label="Tu correo electrónico" required>
-      <button class="btn btn-gold" type="submit">Suscribirme</button>
-    </form>
-    <p class="privacy">Al suscribirte aceptas recibir correos de David Milán Academy. Puedes darte de baja cuando quieras.</p>
-  </div>
-</section>
 
 <!-- ======================= CONTACTO ======================= -->
 <section id="contacto">
@@ -894,11 +868,9 @@ footer{background:#03101c;color:#a5b8cb;padding:64px 0 24px}
     <div class="reveal">
       <span class="eyebrow">Contacto</span>
       <h2 style="font-size:clamp(1.8rem,3.4vw,2.6rem);margin:.9rem 0 1rem">¿Hablamos?</h2>
-      <p style="color:var(--muted)">Dudas sobre un libro, uso en centros educativos, colaboraciones o erratas detectadas: escribe y te respondo personalmente.</p>
+      <p style="color:var(--muted)">Dudas sobre un libro o propuestas de colaboración: escribe y te respondo personalmente.</p>
       <ul class="contact-list" style="margin-top:1.6rem">
-        <li><span class="glyph" aria-hidden="true">✉</span><div><b>Correo</b><span id="mailText">contacto@davidmilanacademy.com</span></div></li>
-        <li><span class="glyph" aria-hidden="true">⌂</span><div><b>Centros educativos</b><span>Condiciones especiales para adopción en aula</span></div></li>
-        <li><span class="glyph" aria-hidden="true">⚑</span><div><b>Erratas</b><span>Se corrigen en la siguiente reimpresión y se publican aquí</span></div></li>
+        <li><span class="glyph" aria-hidden="true">✉</span><div><b>Correo</b><span id="mailText">davidmilanacademy@gmail.com</span></div></li>
       </ul>
     </div>
     <form class="form reveal" id="contactForm" novalidate>
@@ -910,9 +882,7 @@ footer{background:#03101c;color:#a5b8cb;padding:64px 0 24px}
       <label for="cSubject">Asunto</label>
       <select id="cSubject" name="asunto">
         <option>Consulta sobre un libro</option>
-        <option>Uso en centro educativo</option>
         <option>Colaboración o prensa</option>
-        <option>Aviso de errata</option>
         <option>Otro</option>
       </select>
       <label for="cMsg">Mensaje</label>
@@ -1004,7 +974,7 @@ footer{background:#03101c;color:#a5b8cb;padding:64px 0 24px}
        · Reseñas: sustituir las de ejemplo por reseñas reales
    ============================================================ */
 
-const CONTACTO = 'contacto@davidmilanacademy.com';   // REVISAR: correo real
+const CONTACTO = 'davidmilanacademy@gmail.com';   // REVISAR: correo real
 
 /* ---------- Datos del catálogo ---------- */
 const books = [
@@ -1017,7 +987,7 @@ const books = [
     thumb:'assets/universidad-teoria-circuitos-400.webp',
     isbn:null, asin:null, paginas:null, anio:2026, edicion:'Primera edición',
     formato:'Tapa blanda y edición digital', idioma:'Español', nivel:'Grado en Ingeniería',
-    amazon:'', preview:'assets/muestra-universidad-teoria-circuitos.pdf',
+    amazon:'', ebook:'', preview:'assets/muestra-universidad-teoria-circuitos.pdf',
     sinopsis:[
       'Domina la Teoría de Circuitos desde sus fundamentos hasta el nivel exigido en una escuela de ingeniería. Cada concepto se aborda tres veces: qué ocurre físicamente, cómo se modela matemáticamente y para qué sirve en la industria.',
       'Los ejemplos se resuelven con la estructura completa —enunciado, datos, planteamiento, resolución paso a paso, comprobación y conclusión— para que nunca haya un salto sin justificar. Los problemas propuestos están clasificados por exigencia: básico, medio, avanzado, tipo examen y diseño en ingeniería.',
@@ -1039,7 +1009,7 @@ const books = [
     cover:'assets/ebau-matematicas.webp', thumb:'assets/ebau-matematicas-400.webp',
     isbn:null, asin:'B0FK3VM64K', paginas:null, anio:2025, edicion:'Versión actualizada',
     formato:'Tapa blanda y Kindle', idioma:'Español', nivel:'2.º de Bachillerato',
-    amazon:'https://www.amazon.es/EBAU-PAU-SELECTIVIDAD-MATEM%C3%81TICAS-EJERCICIOS/dp/B0FK3VM64K/',
+    amazon:'https://www.amazon.es/EBAU-PAU-SELECTIVIDAD-MATEM%C3%81TICAS-EJERCICIOS/dp/B0FK3VM64K/', ebook:'',
     preview:'',
     sinopsis:[
       'Guía práctica y completa para superar la asignatura de Matemáticas en la EBAU / PAU / Selectividad, con una recopilación de ejercicios oficiales de todas las provincias.',
@@ -1062,8 +1032,8 @@ const books = [
     cover:'assets/ebau-fisica.webp', thumb:'assets/ebau-fisica-400.webp',
     isbn:null, asin:'B0G4M5TP3Z', paginas:null, anio:2025, edicion:'Primera edición',
     formato:'Tapa blanda y Kindle', idioma:'Español', nivel:'2.º de Bachillerato',
-    amazon:'https://www.amazon.es/F%C3%ADsica-EBAU-Selectividad-David-Mil%C3%A1n/dp/B0G4M5TP3Z/',
-    preview:'',
+    amazon:'https://www.amazon.es/F%C3%ADsica-EBAU-Selectividad-David-Mil%C3%A1n/dp/B0G4M5TP3Z/', ebook:'',
+    preview:'assets/muestra-ebau-fisica-david-milan.pdf',
     sinopsis:[
       'La herramienta definitiva para dominar la Física de 2.º de Bachillerato y afrontar la Selectividad con seguridad.',
       'Más que una colección de problemas, es un curso completo que cubre el currículo oficial: más de 150 ejercicios resueltos, teoría sintetizada, razonamiento físico paso a paso y gráficos vectoriales de gran claridad.',
@@ -1086,7 +1056,7 @@ const books = [
     cover:'assets/ebau-quimica.webp', thumb:'assets/ebau-quimica-400.webp',
     isbn:null, asin:'B0FRT3L1WG', paginas:null, anio:2025, edicion:'Primera edición',
     formato:'Tapa blanda y Kindle', idioma:'Español', nivel:'2.º de Bachillerato',
-    amazon:'https://www.amazon.es/Qu%C3%ADmica-EBAU-Selectividad-David-Mil%C3%A1n/dp/B0FRT3L1WG/',
+    amazon:'https://www.amazon.es/Qu%C3%ADmica-EBAU-Selectividad-David-Mil%C3%A1n/dp/B0FRT3L1WG/', ebook:'',
     preview:'',
     sinopsis:[
       'Tu ruta directa para dominar la Química de Selectividad: más de 150 ejercicios oficiales resueltos paso a paso y explicados con claridad.',
@@ -1110,7 +1080,7 @@ const books = [
     cover:'assets/trucos-calculo-mental.webp', thumb:'assets/trucos-calculo-mental-400.webp',
     isbn:null, asin:'B0HBLZB51K', paginas:null, anio:2025, edicion:'Edición digital',
     formato:'eBook (Kindle)', idioma:'Español', nivel:'Todos los niveles',
-    amazon:'https://www.amazon.es/dp/B0HBLZB51K', preview:'',
+    amazon:'https://www.amazon.es/dp/B0HBLZB51K', ebook:'https://www.amazon.es/dp/B0HBLZB51K', preview:'',
     sinopsis:[
       '¿Sigues usando la calculadora para operaciones sencillas? Este libro reúne decenas de estrategias de cálculo mental de distintas culturas, explicadas paso a paso.',
       'Multiplicaciones y divisiones rápidas, porcentajes, potencias, cuadrados, raíces y patrones ocultos de los números, con ejemplos resueltos y ejercicios para entrenar.',
@@ -1186,8 +1156,6 @@ const faqs = [
   ['¿Puedo leer una parte antes de comprar?','Sí. La muestra gratuita de Teoría de Circuitos incluye los tres primeros capítulos completos y puedes leerla o descargarla desde esta misma web, sin registro.'],
   ['¿Los ejercicios están realmente resueltos paso a paso?','Sí, y con una estructura fija: enunciado, datos, planteamiento, resolución razonada, comprobación del resultado y conclusión. No hay pasos ocultos ni "de aquí se deduce que".'],
   ['¿Sirven si estudio en otra comunidad autónoma?','Los manuales de EBAU recogen ejercicios oficiales de todas las provincias de España, precisamente para cubrir las diferencias entre comunidades. La teoría y el método son comunes a todas.'],
-  ['Soy docente, ¿puedo usarlos en clase?','Sí. Escribe a través del formulario de contacto indicando tu centro y la asignatura para consultar las condiciones de adopción en aula.'],
-  ['He encontrado una errata, ¿qué hago?','Avísame por el formulario de contacto indicando la página. Las erratas confirmadas se corrigen en la siguiente reimpresión.'],
   ['¿Habrá más títulos?','Sí. La Biblioteca de Ingeniería continúa con nuevos volúmenes y hay títulos en preparación en otras materias. Puedes suscribirte para recibir el aviso.']
 ];
 
@@ -1223,9 +1191,17 @@ const grid=$('#grid'), count=$('#count'), qInput=$('#q'), sortSel=$('#sort');
 let filtro='all';
 
 function cardHTML(b){
-  const compra = b.amazon
-    ? `<a class="btn btn-outline" href="${esc(b.amazon)}" target="_blank" rel="noopener">Comprar</a>`
-    : `<button class="btn btn-outline" type="button" disabled>Próximamente</button>`;
+  const muestra = b.preview
+    ? `<button class="btn btn-outline js-preview" type="button" data-preview="${esc(b.preview)}" data-title="${esc(b.title)} — muestra">Leer muestra</button>`
+    : `<button class="btn btn-outline" type="button" disabled title="Añade el PDF de muestra para activar este botón">Leer muestra</button>`;
+
+  /* Hasta que se faciliten enlaces Kindle específicos, se utiliza el enlace de Amazon
+     disponible para el título. Puedes sustituirlo después por b.ebook. */
+  const ebookUrl = b.ebook || b.amazon;
+  const ebook = ebookUrl
+    ? `<a class="btn btn-gold" href="${esc(ebookUrl)}" target="_blank" rel="noopener">Comprar en eBook</a>`
+    : `<button class="btn btn-gold" type="button" disabled title="Añade el enlace del eBook para activar este botón">Comprar en eBook</button>`;
+
   return `<article class="bookcard reveal in">
     <div class="cover">
       <span class="pill pill-gold badge">${esc(b.badge)}</span>
@@ -1241,8 +1217,9 @@ function cardHTML(b){
         <span>${esc(b.formato)}</span>
       </div>
       <div class="actions">
-        <button class="btn btn-navy js-detail" type="button" data-slug="${esc(b.slug)}">Ver ficha</button>
-        ${compra}
+        <button class="btn btn-navy js-detail full" type="button" data-slug="${esc(b.slug)}">Ver ficha completa</button>
+        ${muestra}
+        ${ebook}
       </div>
     </div>
   </article>`;
@@ -1391,8 +1368,8 @@ function fichaHTML(b){
   return `<div class="detail">
     <div class="detail-cover">
       <img src="${esc(b.cover)}" alt="Portada de ${esc(b.title)}" width="1000" height="1500">
-      ${b.amazon?`<a class="btn btn-gold" href="${esc(b.amazon)}" target="_blank" rel="noopener">Comprar en Amazon</a>`:`<button class="btn btn-outline" type="button" disabled>Próximamente</button>`}
-      ${b.preview?`<button class="btn btn-navy js-preview" type="button" data-preview="${esc(b.preview)}" data-title="${esc(b.title)} — muestra">Leer muestra gratuita</button>`:''}
+      ${b.preview?`<button class="btn btn-outline js-preview" type="button" data-preview="${esc(b.preview)}" data-title="${esc(b.title)} — muestra">Leer muestra</button>`:`<button class="btn btn-outline" type="button" disabled>Leer muestra</button>`}
+      ${(b.ebook||b.amazon)?`<a class="btn btn-gold" href="${esc(b.ebook||b.amazon)}" target="_blank" rel="noopener">Comprar en eBook</a>`:`<button class="btn btn-gold" type="button" disabled>Comprar en eBook</button>`}
     </div>
     <div>
       <span class="pill pill-blue">${esc(b.badge)}</span>
@@ -1465,15 +1442,6 @@ document.addEventListener('click',e=>{
    ============================================================ */
 const reMail=/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i;
 
-$('#newsForm').addEventListener('submit',e=>{
-  e.preventDefault();
-  const v=$('#newsEmail').value.trim();
-  if(!reMail.test(v)) return toast('Introduce un correo válido.');
-  /* Para conectarlo de verdad: sustituye estas líneas por el endpoint
-     de Mailchimp, Brevo, MailerLite o Formspree. */
-  toast('¡Gracias! Te avisaré de las novedades.');
-  e.target.reset();
-});
 
 $('#contactForm').addEventListener('submit',e=>{
   e.preventDefault();
@@ -1489,22 +1457,8 @@ $('#contactForm').addEventListener('submit',e=>{
 $('#mailText').textContent=CONTACTO;
 
 /* ============================================================
-   Interfaz: tema, menú, scroll, contadores
+   Interfaz: menú, scroll y contadores — modo claro permanente
    ============================================================ */
-const themeBtn=$('#themeBtn');
-function setTheme(t){
-  document.documentElement.dataset.theme=t;
-  themeBtn.textContent = t==='dark' ? '☀' : '◐';
-  themeBtn.setAttribute('aria-label', t==='dark'?'Activar tema claro':'Activar tema oscuro');
-  const meta=$('meta[name="theme-color"]'); if(meta) meta.content = t==='dark'?'#04101c':'#071a2d';
-}
-let guardado=null; try{ guardado=localStorage.getItem('dm-theme'); }catch(_){}
-setTheme(guardado || (matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));
-themeBtn.addEventListener('click',()=>{
-  const next = document.documentElement.dataset.theme==='dark'?'light':'dark';
-  setTheme(next); try{ localStorage.setItem('dm-theme',next); }catch(_){}
-});
-
 const burger=$('#burger'), navLinks=$('#navLinks');
 burger.addEventListener('click',()=>{
   const abierto=navLinks.classList.toggle('open');
